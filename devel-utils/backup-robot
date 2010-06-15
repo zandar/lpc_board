@@ -1,0 +1,6 @@
+#!/bin/sh
+set -x
+ssh root@10.1.1.1 'tar cv `find / -xdev -type f -o -type l -o -type b -o -type c`' > robot.tar
+
+
+

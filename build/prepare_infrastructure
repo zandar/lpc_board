@@ -1,0 +1,41 @@
+#!/bin/bash
+
+set -e
+
+
+cd `dirname $0`
+export MYDIR=$PWD
+
+########################################
+# Update submodules
+########################################
+cd `git rev-parse --show-cdup`
+
+update_submodule() {
+    path=$1
+    git submodule init "$path"
+    if ! git submodule update -- "$path"; then
+	git config --remove-section "submodule.$path"
+	git checkout "$path"
+    else
+	( cd $path && git submodule init && git submodule update ) || exit 1
+    fi
+}
+
+update_submodule src/sysless
+update_submodule src/orte
+update_submodule robot-root
+update_submodule src/v4l/v4l-utils
+#update_submodule src/pxmc
+#update_submodule src/linux-shark
+
+
+########################################
+# Default config
+########################################
+cd $MYDIR
+for i in h8eurobot/ h8mirosot/ h8canusb/ linux/ ppc/ lpceurobot/; do
+	echo "make default-config"
+	make -C $i default-config | grep -v default-config-pass
+done
+

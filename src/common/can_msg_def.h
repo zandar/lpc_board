@@ -1,0 +1,10 @@
+
+/* Flags sent in CAN_VIDLE_STATUS message  */
+#define CAN_VIDLE_INITIALIZING    0x01
+#define CAN_VIDLE_TIMEOUT 	  0x02
+#define CAN_VIDLE_OUT_OF_BOUNDS   0x04
+
+#define CAN_SWITCH_BUMPER	  0x01
+#define CAN_SWITCH_COLOR	  0x02
+#define CAN_SWITCH_LEFT		  0x04
+#define CAN_SWITCH_RIGHT	  0x08

@@ -1,0 +1,10 @@
+/home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/bin-tests/hwinit_test-ram: \
+  /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/lpc21xx.ld-ram \
+  /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/crt0.o  \
+  /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/initarray.o  \
+  hwinit.o  \
+  test.o  \
+  /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/libeurobothw.a  \
+  /usr/arm-elf/gcc/4.4.3/bin/../lib/gcc/arm-elf/4.4.3/libgcc.a  \
+  /usr/arm-elf/gcc/4.4.3/bin/../lib/gcc/arm-elf/4.4.3/../../../../arm-elf/lib/libg.a  \
+  /usr/arm-elf/gcc/4.4.3/bin/../lib/gcc/arm-elf/4.4.3/../../../../arm-elf/lib/libc.a  \

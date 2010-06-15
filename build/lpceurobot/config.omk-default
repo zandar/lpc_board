@@ -1,0 +1,53 @@
+# Start of OMK config file
+# This file should not be altered manually
+# Overrides should be stored in file config.omk
+
+# Config for arch/generic/defines
+# Config for arch/generic
+# Config for arch/arm/generic/defines
+# Config for arch/arm/generic/libs/misc
+# Config for arch/arm/generic/libs
+# Config for arch/arm/generic
+# Config for arch/arm/mach-lpc21xx/defines
+# Config for arch/arm/mach-lpc21xx/tools/lpc21isp
+# Config for arch/arm/mach-lpc21xx/tools/tolpc
+# Config for arch/arm/mach-lpc21xx/tools
+# Config for arch/arm/mach-lpc21xx/libs/boot
+# Config for arch/arm/mach-lpc21xx/libs/can
+# Config for arch/arm/mach-lpc21xx/libs/lpcan
+# Config for arch/arm/mach-lpc21xx/libs/lpcanvca
+# Config for arch/arm/mach-lpc21xx/libs/pll
+# Config for arch/arm/mach-lpc21xx/libs/pwm
+# Config for arch/arm/mach-lpc21xx/libs/uart_zen
+# Config for arch/arm/mach-lpc21xx/libs/uart-nozen
+#CONFIG_UART_NOZEN=x
+# Config for arch/arm/mach-lpc21xx/libs/ldscripts
+# Config for arch/arm/mach-lpc21xx/libs
+# Config for arch/arm/mach-lpc21xx
+# Config for arch/arm
+# Config for arch
+# Config for board/arm/lpceurobot/defines
+# Config for board/arm/lpceurobot/libs/hwinit
+# Config for board/arm/lpceurobot/libs
+# Config for board/arm/lpceurobot
+# Config for board
+# Config for eb_blink
+# Config for eb_canlog
+# Config for eb_common
+# Config for eb_ebb
+# Config for eb_pwr
+# Config for eb_sberac_09
+# Config for eb_vidle
+# Config for libs4c/cmdproc
+# Config for libs4c/misc
+# Config for libs4c/usb/base
+#CONFIG_USB_BASE=x
+# Config for libs4c/usb/pdiusb
+#CONFIG_USB_PDIUSB=x
+# Config for libs4c/usb/more
+#CONFIG_USB_MORE=x
+# Config for libs4c/usb/lpcusb
+#CONFIG_USB_LPCUSB=x
+# Config for libs4c/usb
+# Config for libs4c
+# Config for 

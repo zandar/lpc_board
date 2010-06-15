@@ -1,0 +1,30 @@
+#!/bin/sh
+set -x
+myip=$(ip a|grep -o 'inet 10\.1\.1\.[0-9]\+'|cut -d ' ' -f 2)
+
+if [ $USER = "zandar" ]; then
+	mypath=/home/zandar/EUROBOT/eurobot/build/ppc/_compiled
+	mount_point=/home/michalv
+elif [ $USER = "filip" ]; then
+	mypath=/home/filip/fel/eb/build/ppc/_compiled
+	mount_point=/home/filip
+elif [ $USER = "wsh" ]; then
+	mypath=/home/wsh/projects/eurobot/soft/build/ppc/_compiled
+	mount_point=/home/michal
+elif [ $USER = "petr" ]; then
+	mypath=/mnt/data/eurobot/eurobot/build/
+	mount_point=/home/petr
+else
+	echo "Error: Unknown user $USER" >&2
+	exit 1
+fi
+
+if [ "$1" = "-u" ]; then
+	cmd="umount $mount_point"
+else
+	cmd="mount -o nolock $myip:$mypath $mount_point"
+fi
+ssh root@10.1.1.1 $cmd
+if [ "$1" = "-c" ]; then
+	ssh root@10.1.1.1 /home/bin/copy_from $mount_point
+fi

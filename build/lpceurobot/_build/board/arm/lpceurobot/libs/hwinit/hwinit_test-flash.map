@@ -1,0 +1,313 @@
+Archive member included because of file (symbol)
+
+/home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/libeurobothw.a(error.o)
+                              hwinit.o (error)
+/home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/libeurobothw.a(startcfg.o)
+                              test.o (wait)
+/usr/arm-elf/gcc/4.4.3/bin/../lib/gcc/arm-elf/4.4.3/libgcc.a(_divsi3.o)
+                              /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/libeurobothw.a(startcfg.o) (__divsi3)
+/usr/arm-elf/gcc/4.4.3/bin/../lib/gcc/arm-elf/4.4.3/libgcc.a(_dvmd_tls.o)
+                              /usr/arm-elf/gcc/4.4.3/bin/../lib/gcc/arm-elf/4.4.3/libgcc.a(_divsi3.o) (__div0)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+FLASH            0x0000000000000000 0x000000000003e000 xr
+RAM              0x0000000040000000 0x0000000000004000 rw
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/crt0.o
+LOAD /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/initarray.o
+LOAD hwinit.o
+                0x0000000000000400                STACK_SIZE = 0x400
+
+.ivec           0x0000000000000000       0x40
+ *(.ivec)
+ .ivec          0x0000000000000000       0x40 /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/crt0.o
+                0x0000000000000000                _boot
+
+.text           0x0000000000000040      0x77c
+ *crt0.o(.text)
+ .text          0x0000000000000040      0x114 /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/crt0.o
+                0x0000000000000040                _mainCRTStartup
+                0x0000000000000040                _start
+                0x0000000000000040                start
+                0x0000000000000124                reset
+                0x0000000000000124                abort
+                0x0000000000000124                _reset
+                0x0000000000000124                exit
+ *(.text)
+ .text          0x0000000000000154       0x3c /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/initarray.o
+                0x0000000000000154                __libc_init_array
+ .text          0x0000000000000190       0x80 hwinit.o
+                0x0000000000000190                __hardware_init
+ .text          0x0000000000000210       0x64 test.o
+                0x0000000000000210                main
+ .text          0x0000000000000274       0x48 /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/libeurobothw.a(error.o)
+                0x0000000000000274                error
+ .text          0x00000000000002bc      0x3bc /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/libeurobothw.a(startcfg.o)
+                0x00000000000002bc                wait
+                0x00000000000002c0                deb_led
+                0x000000000000037c                init_PLL
+                0x00000000000004ec                get_sys_speed
+                0x0000000000000534                init_MAM
+                0x00000000000005d8                set_APB
+                0x00000000000005f0                get_apb_speed
+ .text          0x0000000000000678      0x140 /usr/arm-elf/gcc/4.4.3/bin/../lib/gcc/arm-elf/4.4.3/libgcc.a(_divsi3.o)
+                0x0000000000000678                __aeabi_idiv
+                0x0000000000000678                __divsi3
+                0x00000000000007a0                __aeabi_idivmod
+ .text          0x00000000000007b8        0x4 /usr/arm-elf/gcc/4.4.3/bin/../lib/gcc/arm-elf/4.4.3/libgcc.a(_dvmd_tls.o)
+                0x00000000000007b8                __aeabi_ldiv0
+                0x00000000000007b8                __div0
+                0x00000000000007b8                __aeabi_idiv0
+ *(.glue_7)
+ .glue_7        0x0000000000000000        0x0 linker stubs
+ *(.glue_7t)
+ .glue_7t       0x0000000000000000        0x0 linker stubs
+                0x00000000000007bc                . = ALIGN (0x4)
+                0x00000000000007bc                _etext = .
+
+.vfp11_veneer   0x00000000000007bc        0x0
+ .vfp11_veneer  0x0000000000000000        0x0 linker stubs
+
+.v4_bx          0x00000000000007bc        0x0
+ .v4_bx         0x0000000000000000        0x0 linker stubs
+
+.rodata         0x00000000000007bc       0x10
+ *(.rodata)
+ .rodata        0x00000000000007bc       0x10 test.o
+ *(.rodata*)
+                0x00000000000007cc                . = ALIGN (0x4)
+                0x00000000000007cc                PROVIDE (__init_array_start, .)
+
+.init_array     0x00000000000007cc        0x4
+ *(.init_array)
+ .init_array    0x00000000000007cc        0x4 hwinit.o
+                0x00000000000007cc                fp
+                0x00000000000007d0                . = ALIGN (0x4)
+                0x00000000000007d0                PROVIDE (__init_array_end, .)
+                0x00000000000007d0                _datainit = LOADADDR (.data)
+
+.data           0x0000000040000000        0x0 load address 0x00000000000007d0
+                0x0000000040000000                _data = .
+ *(.data)
+ .data          0x0000000040000000        0x0 /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/crt0.o
+ .data          0x0000000040000000        0x0 /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/initarray.o
+ .data          0x0000000040000000        0x0 hwinit.o
+ .data          0x0000000040000000        0x0 test.o
+ .data          0x0000000040000000        0x0 /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/libeurobothw.a(error.o)
+ .data          0x0000000040000000        0x0 /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/libeurobothw.a(startcfg.o)
+ .data          0x0000000040000000        0x0 /usr/arm-elf/gcc/4.4.3/bin/../lib/gcc/arm-elf/4.4.3/libgcc.a(_divsi3.o)
+ .data          0x0000000040000000        0x0 /usr/arm-elf/gcc/4.4.3/bin/../lib/gcc/arm-elf/4.4.3/libgcc.a(_dvmd_tls.o)
+                0x0000000040000000                . = ALIGN (0x4)
+                0x0000000040000000                _edata = .
+
+.bss            0x0000000040000000        0x0 load address 0x00000000000007d0
+                0x0000000040000000                __bss_start = .
+                0x0000000040000000                __bss_start__ = .
+ *(.bss)
+ .bss           0x0000000040000000        0x0 /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/crt0.o
+ .bss           0x0000000040000000        0x0 /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/initarray.o
+ .bss           0x0000000040000000        0x0 hwinit.o
+ .bss           0x0000000040000000        0x0 test.o
+ .bss           0x0000000040000000        0x0 /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/libeurobothw.a(error.o)
+ .bss           0x0000000040000000        0x0 /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/libeurobothw.a(startcfg.o)
+ .bss           0x0000000040000000        0x0 /usr/arm-elf/gcc/4.4.3/bin/../lib/gcc/arm-elf/4.4.3/libgcc.a(_divsi3.o)
+ .bss           0x0000000040000000        0x0 /usr/arm-elf/gcc/4.4.3/bin/../lib/gcc/arm-elf/4.4.3/libgcc.a(_dvmd_tls.o)
+ *(COMMON)
+                0x0000000040000000                . = ALIGN (0x4)
+                0x0000000040000000                __bss_end__ = .
+
+.stack          0x0000000040000000      0x400 load address 0x00000000000007d0
+                0x0000000040000400                . = (. + STACK_SIZE)
+ *fill*         0x0000000040000000      0x400 00
+                0x0000000040000400                PROVIDE (_stack, .)
+                0x0000000040000400                _end = .
+                0x0000000040000400                PROVIDE (end, .)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.ARM.attributes
+                0x0000000000000000       0x10
+ .ARM.attributes
+                0x0000000000000000       0x10 /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/crt0.o
+ .ARM.attributes
+                0x0000000000000010       0x10 /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/initarray.o
+ .ARM.attributes
+                0x0000000000000020       0x10 hwinit.o
+ .ARM.attributes
+                0x0000000000000030       0x10 test.o
+ .ARM.attributes
+                0x0000000000000040       0x10 /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/libeurobothw.a(error.o)
+ .ARM.attributes
+                0x0000000000000050       0x10 /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/libeurobothw.a(startcfg.o)
+ .ARM.attributes
+                0x0000000000000060       0x10 /usr/arm-elf/gcc/4.4.3/bin/../lib/gcc/arm-elf/4.4.3/libgcc.a(_divsi3.o)
+ .ARM.attributes
+                0x0000000000000070       0x10 /usr/arm-elf/gcc/4.4.3/bin/../lib/gcc/arm-elf/4.4.3/libgcc.a(_dvmd_tls.o)
+
+.comment        0x0000000000000000       0x11
+ *(.comment)
+ .comment       0x0000000000000000       0x11 /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/initarray.o
+                                         0x12 (size before relaxing)
+ .comment       0x0000000000000000       0x12 hwinit.o
+ .comment       0x0000000000000000       0x12 test.o
+ .comment       0x0000000000000000       0x12 /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/libeurobothw.a(error.o)
+ .comment       0x0000000000000000       0x12 /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/libeurobothw.a(startcfg.o)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x0000000000000000      0x108
+ *(.debug_aranges)
+ .debug_aranges
+                0x0000000000000000       0x28 /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/crt0.o
+ .debug_aranges
+                0x0000000000000028       0x20 /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/initarray.o
+ .debug_aranges
+                0x0000000000000048       0x20 hwinit.o
+ .debug_aranges
+                0x0000000000000068       0x20 test.o
+ .debug_aranges
+                0x0000000000000088       0x20 /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/libeurobothw.a(error.o)
+ .debug_aranges
+                0x00000000000000a8       0x20 /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/libeurobothw.a(startcfg.o)
+ .debug_aranges
+                0x00000000000000c8       0x20 /usr/arm-elf/gcc/4.4.3/bin/../lib/gcc/arm-elf/4.4.3/libgcc.a(_divsi3.o)
+ .debug_aranges
+                0x00000000000000e8       0x20 /usr/arm-elf/gcc/4.4.3/bin/../lib/gcc/arm-elf/4.4.3/libgcc.a(_dvmd_tls.o)
+
+.debug_pubnames
+                0x0000000000000000       0xfd
+ *(.debug_pubnames)
+ .debug_pubnames
+                0x0000000000000000       0x28 /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/initarray.o
+ .debug_pubnames
+                0x0000000000000028       0x2d hwinit.o
+ .debug_pubnames
+                0x0000000000000055       0x1b test.o
+ .debug_pubnames
+                0x0000000000000070       0x1c /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/libeurobothw.a(error.o)
+ .debug_pubnames
+                0x000000000000008c       0x71 /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/libeurobothw.a(startcfg.o)
+
+.debug_info     0x0000000000000000      0xa1d
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x0000000000000000       0xce /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/crt0.o
+ .debug_info    0x00000000000000ce       0xdc /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/initarray.o
+ .debug_info    0x00000000000001aa      0x187 hwinit.o
+ .debug_info    0x0000000000000331      0x171 test.o
+ .debug_info    0x00000000000004a2      0x232 /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/libeurobothw.a(error.o)
+ .debug_info    0x00000000000006d4      0x1e9 /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/libeurobothw.a(startcfg.o)
+ .debug_info    0x00000000000008bd       0xb0 /usr/arm-elf/gcc/4.4.3/bin/../lib/gcc/arm-elf/4.4.3/libgcc.a(_divsi3.o)
+ .debug_info    0x000000000000096d       0xb0 /usr/arm-elf/gcc/4.4.3/bin/../lib/gcc/arm-elf/4.4.3/libgcc.a(_dvmd_tls.o)
+
+.debug_abbrev   0x0000000000000000      0x49c
+ *(.debug_abbrev)
+ .debug_abbrev  0x0000000000000000       0x12 /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/crt0.o
+ .debug_abbrev  0x0000000000000012       0xa2 /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/initarray.o
+ .debug_abbrev  0x00000000000000b4       0xef hwinit.o
+ .debug_abbrev  0x00000000000001a3       0xbd test.o
+ .debug_abbrev  0x0000000000000260       0xfe /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/libeurobothw.a(error.o)
+ .debug_abbrev  0x000000000000035e      0x116 /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/libeurobothw.a(startcfg.o)
+ .debug_abbrev  0x0000000000000474       0x14 /usr/arm-elf/gcc/4.4.3/bin/../lib/gcc/arm-elf/4.4.3/libgcc.a(_divsi3.o)
+ .debug_abbrev  0x0000000000000488       0x14 /usr/arm-elf/gcc/4.4.3/bin/../lib/gcc/arm-elf/4.4.3/libgcc.a(_dvmd_tls.o)
+
+.debug_line     0x0000000000000000      0x730
+ *(.debug_line)
+ .debug_line    0x0000000000000000       0xd9 /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/crt0.o
+ .debug_line    0x00000000000000d9       0xd5 /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/initarray.o
+ .debug_line    0x00000000000001ae      0x11a hwinit.o
+ .debug_line    0x00000000000002c8      0x10d test.o
+ .debug_line    0x00000000000003d5      0x113 /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/libeurobothw.a(error.o)
+ .debug_line    0x00000000000004e8      0x12c /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/libeurobothw.a(startcfg.o)
+ .debug_line    0x0000000000000614       0xaa /usr/arm-elf/gcc/4.4.3/bin/../lib/gcc/arm-elf/4.4.3/libgcc.a(_divsi3.o)
+ .debug_line    0x00000000000006be       0x72 /usr/arm-elf/gcc/4.4.3/bin/../lib/gcc/arm-elf/4.4.3/libgcc.a(_dvmd_tls.o)
+
+.debug_frame    0x0000000000000000      0x15c
+ *(.debug_frame)
+ .debug_frame   0x0000000000000000       0x2c /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/initarray.o
+ .debug_frame   0x000000000000002c       0x28 hwinit.o
+ .debug_frame   0x0000000000000054       0x30 test.o
+ .debug_frame   0x0000000000000084       0x20 /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/libeurobothw.a(error.o)
+ .debug_frame   0x00000000000000a4       0x90 /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/libeurobothw.a(startcfg.o)
+ .debug_frame   0x0000000000000134       0x28 /usr/arm-elf/gcc/4.4.3/bin/../lib/gcc/arm-elf/4.4.3/libgcc.a(_divsi3.o)
+
+.debug_str      0x0000000000000000      0x322
+ *(.debug_str)
+ .debug_str     0x0000000000000000       0xf9 /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/initarray.o
+                                        0x132 (size before relaxing)
+ .debug_str     0x00000000000000f9       0xba hwinit.o
+                                        0x15c (size before relaxing)
+ .debug_str     0x00000000000001b3       0x5b test.o
+                                        0x12a (size before relaxing)
+ .debug_str     0x000000000000020e       0x61 /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/libeurobothw.a(error.o)
+                                         0xe5 (size before relaxing)
+ .debug_str     0x000000000000026f       0xb3 /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/libeurobothw.a(startcfg.o)
+                                        0x14d (size before relaxing)
+
+.debug_loc      0x0000000000000000      0x19a
+ *(.debug_loc)
+ .debug_loc     0x0000000000000000       0x1f /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/initarray.o
+ .debug_loc     0x000000000000001f       0x1f hwinit.o
+ .debug_loc     0x000000000000003e       0x2b test.o
+ .debug_loc     0x0000000000000069       0x13 /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/libeurobothw.a(error.o)
+ .debug_loc     0x000000000000007c      0x11e /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/libeurobothw.a(startcfg.o)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+LOAD test.o
+LOAD /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/libeurobothw.a
+START GROUP
+LOAD /usr/arm-elf/gcc/4.4.3/bin/../lib/gcc/arm-elf/4.4.3/libgcc.a
+LOAD /usr/arm-elf/gcc/4.4.3/bin/../lib/gcc/arm-elf/4.4.3/../../../../arm-elf/lib/libg.a
+LOAD /usr/arm-elf/gcc/4.4.3/bin/../lib/gcc/arm-elf/4.4.3/../../../../arm-elf/lib/libc.a
+END GROUP
+OUTPUT(/home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/bin-tests/hwinit_test-flash elf32-littlearm)
+
+.debug_ranges   0x0000000000000000      0x1f0
+ .debug_ranges  0x0000000000000000       0x20 /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/crt0.o
+ .debug_ranges  0x0000000000000020       0x68 hwinit.o
+ .debug_ranges  0x0000000000000088       0x80 test.o
+ .debug_ranges  0x0000000000000108       0xb0 /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/libeurobothw.a(error.o)
+ .debug_ranges  0x00000000000001b8       0x38 /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/libeurobothw.a(startcfg.o)

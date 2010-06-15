@@ -1,0 +1,580 @@
+Archive member included because of file (symbol)
+
+/usr/lib/libc_nonshared.a(elf-init.oS)
+                              /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/crt1.o (__libc_csu_fini)
+
+Allocating common symbols
+Common symbol       size              file
+
+comm_attr_save      0x3c              tolpc_fn.o
+
+Discarded input sections
+
+ .note.GNU-stack
+                0x0000000000000000        0x0 /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/crt1.o
+ .gnu_debuglink
+                0x0000000000000000        0xc /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/crt1.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/crti.o
+ .gnu_debuglink
+                0x0000000000000000        0xc /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/crti.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 /usr/lib/gcc/i486-linux-gnu/4.4.3/crtbegin.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 load_bfd.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 tolpc.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 tolpc_fn.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 uuencode.o
+ .group         0x0000000000000000        0x8 /usr/lib/libc_nonshared.a(elf-init.oS)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /usr/lib/libc_nonshared.a(elf-init.oS)
+ .note.GNU-stack
+                0x0000000000000000        0x0 /usr/lib/gcc/i486-linux-gnu/4.4.3/crtend.o
+ .note.GNU-stack
+                0x0000000000000000        0x0 /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/crtn.o
+ .gnu_debuglink
+                0x0000000000000000        0xc /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/crtn.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/crt1.o
+LOAD /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/crti.o
+LOAD /usr/lib/gcc/i486-linux-gnu/4.4.3/crtbegin.o
+LOAD load_bfd.o
+LOAD tolpc.o
+LOAD tolpc_fn.o
+LOAD uuencode.o
+LOAD /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/libbfd.so
+LOAD /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/libiberty.a
+LOAD /usr/lib/gcc/i486-linux-gnu/4.4.3/libgcc.a
+LOAD /usr/lib/gcc/i486-linux-gnu/4.4.3/libgcc_s.so
+LOAD /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/libc.so
+START GROUP
+LOAD /lib/libc.so.6
+LOAD /usr/lib/libc_nonshared.a
+LOAD /lib/ld-linux.so.2
+END GROUP
+LOAD /usr/lib/gcc/i486-linux-gnu/4.4.3/libgcc.a
+LOAD /usr/lib/gcc/i486-linux-gnu/4.4.3/libgcc_s.so
+LOAD /usr/lib/gcc/i486-linux-gnu/4.4.3/crtend.o
+LOAD /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/crtn.o
+                0x0000000008048000                PROVIDE (__executable_start, 0x8048000)
+                0x0000000008048134                . = (0x8048000 + SIZEOF_HEADERS)
+
+.interp         0x0000000008048134       0x13
+ *(.interp)
+ .interp        0x0000000008048134       0x13 /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/crt1.o
+
+.note.ABI-tag   0x0000000008048148       0x20
+ .note.ABI-tag  0x0000000008048148       0x20 /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/crt1.o
+
+.note.gnu.build-id
+                0x0000000008048168       0x24
+ *(.note.gnu.build-id)
+ .note.gnu.build-id
+                0x0000000008048168       0x24 /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/crt1.o
+
+.hash           0x000000000804818c      0x180
+ *(.hash)
+ .hash          0x000000000804818c      0x180 /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/crt1.o
+
+.gnu.hash       0x000000000804830c       0x4c
+ *(.gnu.hash)
+ .gnu.hash      0x000000000804830c       0x4c /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/crt1.o
+
+.dynsym         0x0000000008048358      0x390
+ *(.dynsym)
+ .dynsym        0x0000000008048358      0x390 /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/crt1.o
+
+.dynstr         0x00000000080486e8      0x26b
+ *(.dynstr)
+ .dynstr        0x00000000080486e8      0x26b /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/crt1.o
+
+.gnu.version    0x0000000008048954       0x72
+ *(.gnu.version)
+ .gnu.version   0x0000000008048954       0x72 /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/crt1.o
+
+.gnu.version_d  0x00000000080489c8        0x0 load address 0x00000000080489c6
+ *(.gnu.version_d)
+ .gnu.version_d
+                0x0000000000000000        0x0 /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/crt1.o
+
+.gnu.version_r  0x00000000080489c8       0x60
+ *(.gnu.version_r)
+ .gnu.version_r
+                0x00000000080489c8       0x60 /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/crt1.o
+
+.rel.dyn        0x0000000008048a28       0x20
+ *(.rel.init)
+ *(.rel.text .rel.text.* .rel.gnu.linkonce.t.*)
+ .rel.text      0x0000000000000000        0x0 /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/crt1.o
+ *(.rel.fini)
+ *(.rel.rodata .rel.rodata.* .rel.gnu.linkonce.r.*)
+ *(.rel.data.rel.ro* .rel.gnu.linkonce.d.rel.ro.*)
+ *(.rel.data .rel.data.* .rel.gnu.linkonce.d.*)
+ *(.rel.tdata .rel.tdata.* .rel.gnu.linkonce.td.*)
+ *(.rel.tbss .rel.tbss.* .rel.gnu.linkonce.tb.*)
+ *(.rel.ctors)
+ *(.rel.dtors)
+ *(.rel.got)
+ .rel.got       0x0000000008048a28        0x8 /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/crt1.o
+ *(.rel.bss .rel.bss.* .rel.gnu.linkonce.b.*)
+ .rel.bss       0x0000000008048a30       0x18 /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/crt1.o
+ *(.rel.ifunc)
+
+.rel.plt        0x0000000008048a48      0x168
+ *(.rel.plt)
+ .rel.plt       0x0000000008048a48      0x168 /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/crt1.o
+                0x0000000008048bb0                PROVIDE (__rel_iplt_start, .)
+ *(.rel.iplt)
+ .rel.iplt      0x0000000000000000        0x0 /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/crt1.o
+                0x0000000008048bb0                PROVIDE (__rel_iplt_end, .)
+
+.init           0x0000000008048bb0       0x30
+ *(.init)
+ .init          0x0000000008048bb0       0x22 /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/crti.o
+                0x0000000008048bb0                _init
+ .init          0x0000000008048bd2        0x5 /usr/lib/gcc/i486-linux-gnu/4.4.3/crtbegin.o
+ .init          0x0000000008048bd7        0x5 /usr/lib/gcc/i486-linux-gnu/4.4.3/crtend.o
+ .init          0x0000000008048bdc        0x4 /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/crtn.o
+
+.plt            0x0000000008048be0      0x2e0
+ *(.plt)
+ .plt           0x0000000008048be0      0x2e0 /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/crt1.o
+                0x0000000008048bf0                fileno@@GLIBC_2.0
+                0x0000000008048c00                bfd_check_format
+                0x0000000008048c10                setbuf@@GLIBC_2.0
+                0x0000000008048c20                bfd_get_section_contents
+                0x0000000008048c30                __fprintf_chk@@GLIBC_2.3.4
+                0x0000000008048c40                __xstat@@GLIBC_2.0
+                0x0000000008048c50                cfsetspeed@@GLIBC_2.0
+                0x0000000008048c70                __isoc99_sscanf@@GLIBC_2.7
+                0x0000000008048c80                bfd_init
+                0x0000000008048c90                __printf_chk@@GLIBC_2.3.4
+                0x0000000008048ca0                bfd_openr
+                0x0000000008048cb0                fgets@@GLIBC_2.0
+                0x0000000008048cc0                __libc_start_main@@GLIBC_2.0
+                0x0000000008048cd0                tcgetattr@@GLIBC_2.0
+                0x0000000008048ce0                __vsnprintf_chk@@GLIBC_2.3.4
+                0x0000000008048cf0                perror@@GLIBC_2.0
+                0x0000000008048d00                usleep@@GLIBC_2.0
+                0x0000000008048d10                strtol@@GLIBC_2.0
+                0x0000000008048d20                free@@GLIBC_2.0
+                0x0000000008048d30                fflush@@GLIBC_2.0
+                0x0000000008048d40                __vfprintf_chk@@GLIBC_2.3.4
+                0x0000000008048d50                getopt_long@@GLIBC_2.0
+                0x0000000008048d60                ioctl@@GLIBC_2.0
+                0x0000000008048d70                fseek@@GLIBC_2.0
+                0x0000000008048d80                __vsprintf_chk@@GLIBC_2.3.4
+                0x0000000008048d90                fclose@@GLIBC_2.1
+                0x0000000008048da0                strlen@@GLIBC_2.0
+                0x0000000008048db0                bfd_perror
+                0x0000000008048dc0                fopen@@GLIBC_2.1
+                0x0000000008048dd0                bfd_close
+                0x0000000008048de0                fgetc@@GLIBC_2.0
+                0x0000000008048df0                select@@GLIBC_2.0
+                0x0000000008048e00                fwrite@@GLIBC_2.0
+                0x0000000008048e10                malloc@@GLIBC_2.0
+                0x0000000008048e20                __stack_chk_fail@@GLIBC_2.4
+                0x0000000008048e30                fputc@@GLIBC_2.0
+                0x0000000008048e40                puts@@GLIBC_2.0
+                0x0000000008048e50                tcsetattr@@GLIBC_2.0
+                0x0000000008048e60                __sprintf_chk@@GLIBC_2.3.4
+                0x0000000008048e70                strncmp@@GLIBC_2.0
+                0x0000000008048e80                _IO_putc@@GLIBC_2.0
+                0x0000000008048e90                fread@@GLIBC_2.0
+                0x0000000008048ea0                ferror@@GLIBC_2.0
+                0x0000000008048eb0                exit@@GLIBC_2.0
+ *(.iplt)
+ .iplt          0x0000000000000000        0x0 /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/crt1.o
+
+.text           0x0000000008048ec0     0x1e2c
+ *(.text.unlikely .text.*_unlikely)
+ *(.text .stub .text.* .gnu.linkonce.t.*)
+ .text          0x0000000008048ec0       0x24 /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/crt1.o
+                0x0000000008048ec0                _start
+ .text          0x0000000008048ee4        0x0 /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/crti.o
+ *fill*         0x0000000008048ee4        0xc 90909090
+ .text          0x0000000008048ef0       0x83 /usr/lib/gcc/i486-linux-gnu/4.4.3/crtbegin.o
+ *fill*         0x0000000008048f73        0xd 90909090
+ .text          0x0000000008048f80      0x217 load_bfd.o
+                0x0000000008048f80                load_bfd
+ *fill*         0x0000000008049197        0x9 90909090
+ .text          0x00000000080491a0      0xb65 tolpc.o
+                0x00000000080491a0                ram_write_cb
+                0x00000000080491c0                clear_cmd
+                0x0000000008049200                error
+                0x0000000008049280                not_implemented
+                0x00000000080492a0                load_exec
+                0x0000000008049370                load_file
+                0x0000000008049470                run_cmd
+                0x0000000008049680                new_command
+                0x00000000080496c0                main
+ *fill*         0x0000000008049d05        0xb 90909090
+ .text          0x0000000008049d10      0xe00 tolpc_fn.o
+                0x0000000008049d10                tolpc_echo
+                0x0000000008049d20                tolpc_break
+                0x0000000008049d30                tolpc_readline_to
+                0x0000000008049d60                close_comm
+                0x0000000008049da0                poll_input
+                0x0000000008049e60                send_line
+                0x000000000804a1c0                write_ram
+                0x000000000804a370                tolpc_write_ram
+                0x000000000804a390                send_line_fmt
+                0x000000000804a410                synchronize
+                0x000000000804a6a0                setup_comm_dev
+                0x000000000804a7a0                open_comm
+                0x000000000804a8b0                tolpc_open_target
+                0x000000000804a910                tolpc_send_cmd
+                0x000000000804a9b0                tolpc_bootver
+                0x000000000804aa00                tolpc_partid
+                0x000000000804aa50                tolpc_unlock
+                0x000000000804aa70                tolpc_verbose
+                0x000000000804aac0                tolpc_go
+ .text          0x000000000804ab10      0x135 uuencode.o
+                0x000000000804ab10                uuencode_init
+                0x000000000804ab40                uuencode_line
+ *fill*         0x000000000804ac45        0xb 90909090
+ .text          0x000000000804ac50       0x6a /usr/lib/libc_nonshared.a(elf-init.oS)
+                0x000000000804ac50                __libc_csu_fini
+                0x000000000804ac60                __libc_csu_init
+ .text.__i686.get_pc_thunk.bx
+                0x000000000804acba        0x4 /usr/lib/libc_nonshared.a(elf-init.oS)
+                0x000000000804acba                __i686.get_pc_thunk.bx
+ *fill*         0x000000000804acbe        0x2 90909090
+ .text          0x000000000804acc0       0x2a /usr/lib/gcc/i486-linux-gnu/4.4.3/crtend.o
+ *fill*         0x000000000804acea        0x2 90909090
+ .text          0x000000000804acec        0x0 /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/crtn.o
+ *(.gnu.warning)
+
+.fini           0x000000000804acec       0x1c
+ *(.fini)
+ .fini          0x000000000804acec       0x13 /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/crti.o
+                0x000000000804acec                _fini
+ .fini          0x000000000804acff        0x5 /usr/lib/gcc/i486-linux-gnu/4.4.3/crtbegin.o
+ .fini          0x000000000804ad04        0x4 /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/crtn.o
+                0x000000000804ad08                PROVIDE (__etext, .)
+                0x000000000804ad08                PROVIDE (_etext, .)
+                0x000000000804ad08                PROVIDE (etext, .)
+
+.rodata         0x000000000804ad08      0xb98
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata        0x000000000804ad08        0x4 /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/crt1.o
+                0x000000000804ad08                _fp_hw
+ .rodata.cst4   0x000000000804ad0c        0x4 /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/crt1.o
+                0x000000000804ad0c                _IO_stdin_used
+ .rodata.str1.1
+                0x000000000804ad10       0x7a load_bfd.o
+ *fill*         0x000000000804ad8a        0x2 00
+ .rodata.str1.4
+                0x000000000804ad8c       0x57 load_bfd.o
+ .rodata.str1.1
+                0x000000000804ade3      0x16f tolpc.o
+                                        0x180 (size before relaxing)
+ *fill*         0x000000000804af52        0x2 00
+ .rodata.str1.4
+                0x000000000804af54      0x54a tolpc.o
+ *fill*         0x000000000804b49e        0x2 00
+ .rodata        0x000000000804b4a0      0x138 tolpc.o
+ .rodata.str1.1
+                0x000000000804b5d8      0x10f tolpc_fn.o
+                                        0x117 (size before relaxing)
+ *fill*         0x000000000804b6e7        0x1 00
+ .rodata.str1.4
+                0x000000000804b6e8      0x1b8 tolpc_fn.o
+
+.rodata1
+ *(.rodata1)
+
+.eh_frame_hdr
+ *(.eh_frame_hdr)
+
+.eh_frame       0x000000000804b8a0        0x4
+ *(.eh_frame)
+ .eh_frame      0x000000000804b8a0        0x4 /usr/lib/gcc/i486-linux-gnu/4.4.3/crtend.o
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+                0x000000000804b8a4                . = (ALIGN (0x1000) - ((0x1000 - .) & 0xfff))
+                0x000000000804cf04                . = (0x1000 DATA_SEGMENT_ALIGN 0x1000)
+
+.eh_frame
+ *(.eh_frame)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+
+.tdata
+ *(.tdata .tdata.* .gnu.linkonce.td.*)
+
+.tbss
+ *(.tbss .tbss.* .gnu.linkonce.tb.*)
+ *(.tcommon)
+
+.preinit_array  0x000000000804cf04        0x0
+                0x000000000804cf04                PROVIDE (__preinit_array_start, .)
+ *(.preinit_array)
+                0x000000000804cf04                PROVIDE (__preinit_array_end, .)
+
+.init_array     0x000000000804cf04        0x0
+                0x000000000804cf04                PROVIDE (__init_array_start, .)
+ *(SORT(.init_array.*))
+ *(.init_array)
+                0x000000000804cf04                PROVIDE (__init_array_end, .)
+
+.fini_array     0x000000000804cf04        0x0
+                0x000000000804cf04                PROVIDE (__fini_array_start, .)
+ *(.fini_array)
+ *(SORT(.fini_array.*))
+                0x000000000804cf04                PROVIDE (__fini_array_end, .)
+
+.ctors          0x000000000804cf04        0x8
+ *crtbegin.o(.ctors)
+ .ctors         0x000000000804cf04        0x4 /usr/lib/gcc/i486-linux-gnu/4.4.3/crtbegin.o
+ *crtbegin?.o(.ctors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .ctors)
+ *(SORT(.ctors.*))
+ *(.ctors)
+ .ctors         0x000000000804cf08        0x4 /usr/lib/gcc/i486-linux-gnu/4.4.3/crtend.o
+
+.dtors          0x000000000804cf0c        0x8
+ *crtbegin.o(.dtors)
+ .dtors         0x000000000804cf0c        0x4 /usr/lib/gcc/i486-linux-gnu/4.4.3/crtbegin.o
+ *crtbegin?.o(.dtors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .dtors)
+ *(SORT(.dtors.*))
+ *(.dtors)
+ .dtors         0x000000000804cf10        0x4 /usr/lib/gcc/i486-linux-gnu/4.4.3/crtend.o
+                0x000000000804cf10                __DTOR_END__
+
+.jcr            0x000000000804cf14        0x4
+ *(.jcr)
+ .jcr           0x000000000804cf14        0x0 /usr/lib/gcc/i486-linux-gnu/4.4.3/crtbegin.o
+ .jcr           0x000000000804cf14        0x4 /usr/lib/gcc/i486-linux-gnu/4.4.3/crtend.o
+
+.data.rel.ro
+ *(.data.rel.ro.local* .gnu.linkonce.d.rel.ro.local.*)
+ *(.data.rel.ro* .gnu.linkonce.d.rel.ro.*)
+
+.dynamic        0x000000000804cf18       0xd8
+ *(.dynamic)
+ .dynamic       0x000000000804cf18       0xd8 /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/crt1.o
+                0x000000000804cf18                _DYNAMIC
+
+.got            0x000000000804cff0        0x4
+ *(.got)
+ .got           0x000000000804cff0        0x4 /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/crt1.o
+ *(.igot)
+                0x000000000804cff4                . = (. DATA_SEGMENT_RELRO_END 0xc)
+
+.got.plt        0x000000000804cff4       0xc0
+ *(.got.plt)
+ .got.plt       0x000000000804cff4       0xc0 /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/crt1.o
+                0x000000000804cff4                _GLOBAL_OFFSET_TABLE_
+ *(.igot.plt)
+ .igot.plt      0x0000000000000000        0x0 /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/crt1.o
+
+.data           0x000000000804d0c0      0x170
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x000000000804d0c0        0x4 /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/crt1.o
+                0x000000000804d0c0                data_start
+                0x000000000804d0c0                __data_start
+ .data          0x000000000804d0c4        0x0 /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/crti.o
+ .data          0x000000000804d0c4        0x4 /usr/lib/gcc/i486-linux-gnu/4.4.3/crtbegin.o
+                0x000000000804d0c4                __dso_handle
+ .data          0x000000000804d0c8        0x0 load_bfd.o
+ *fill*         0x000000000804d0c8       0x18 00
+ .data          0x000000000804d0e0      0x150 tolpc.o
+                0x000000000804d0e0                Tolpc
+                0x000000000804d0f8                env
+ .data          0x000000000804d230        0x0 tolpc_fn.o
+ .data          0x000000000804d230        0x0 uuencode.o
+ .data          0x000000000804d230        0x0 /usr/lib/libc_nonshared.a(elf-init.oS)
+ .data          0x000000000804d230        0x0 /usr/lib/gcc/i486-linux-gnu/4.4.3/crtend.o
+ .data          0x000000000804d230        0x0 /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/crtn.o
+
+.data1
+ *(.data1)
+                0x000000000804d230                _edata = .
+                0x000000000804d230                PROVIDE (edata, .)
+                0x000000000804d230                __bss_start = .
+
+.bss            0x000000000804d240       0xfc
+ *(.dynbss)
+ .dynbss        0x000000000804d240       0x44 /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/crt1.o
+                0x000000000804d240                stderr@@GLIBC_2.0
+                0x000000000804d260                stdout@@GLIBC_2.0
+                0x000000000804d280                optarg@@GLIBC_2.0
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x000000000804d284        0x0 /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/crt1.o
+ .bss           0x000000000804d284        0x0 /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/crti.o
+ .bss           0x000000000804d284        0x8 /usr/lib/gcc/i486-linux-gnu/4.4.3/crtbegin.o
+ .bss           0x000000000804d28c        0x0 load_bfd.o
+ .bss           0x000000000804d28c        0x0 tolpc.o
+ .bss           0x000000000804d28c        0x8 tolpc_fn.o
+                0x000000000804d28c                tolpc_debug_level
+                0x000000000804d290                tolpc_verbose_level
+ *fill*         0x000000000804d294        0xc 00
+ .bss           0x000000000804d2a0       0x60 uuencode.o
+ .bss           0x000000000804d300        0x0 /usr/lib/libc_nonshared.a(elf-init.oS)
+ .bss           0x000000000804d300        0x0 /usr/lib/gcc/i486-linux-gnu/4.4.3/crtend.o
+ .bss           0x000000000804d300        0x0 /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/crtn.o
+ *(COMMON)
+ COMMON         0x000000000804d300       0x3c tolpc_fn.o
+                0x000000000804d300                comm_attr_save
+                0x000000000804d33c                . = ALIGN ((. != 0x0)?0x4:0x1)
+                0x000000000804d33c                . = ALIGN (0x4)
+                0x000000000804d33c                . = ALIGN (0x4)
+                0x000000000804d33c                _end = .
+                0x000000000804d33c                PROVIDE (end, .)
+                0x000000000804d33c                . = DATA_SEGMENT_END (.)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x0000000000000000       0x23
+ *(.comment)
+ .comment       0x0000000000000000       0x23 /usr/lib/gcc/i486-linux-gnu/4.4.3/crtbegin.o
+                                         0x24 (size before relaxing)
+ .comment       0x0000000000000000       0x24 load_bfd.o
+ .comment       0x0000000000000000       0x24 tolpc.o
+ .comment       0x0000000000000000       0x24 tolpc_fn.o
+ .comment       0x0000000000000000       0x24 uuencode.o
+ .comment       0x0000000000000000       0x24 /usr/lib/libc_nonshared.a(elf-init.oS)
+ .comment       0x0000000000000000       0x24 /usr/lib/gcc/i486-linux-gnu/4.4.3/crtend.o
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x0000000000000000       0x80
+ *(.debug_aranges)
+ .debug_aranges
+                0x0000000000000000       0x20 load_bfd.o
+ .debug_aranges
+                0x0000000000000020       0x20 tolpc.o
+ .debug_aranges
+                0x0000000000000040       0x20 tolpc_fn.o
+ .debug_aranges
+                0x0000000000000060       0x20 uuencode.o
+
+.debug_pubnames
+                0x0000000000000000      0x28c
+ *(.debug_pubnames)
+ .debug_pubnames
+                0x0000000000000000       0x1f load_bfd.o
+ .debug_pubnames
+                0x000000000000001f       0xa2 tolpc.o
+ .debug_pubnames
+                0x00000000000000c1      0x195 tolpc_fn.o
+ .debug_pubnames
+                0x0000000000000256       0x36 uuencode.o
+
+.debug_info     0x0000000000000000     0x6921
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x0000000000000000     0x487a load_bfd.o
+ .debug_info    0x000000000000487a      0xe0f tolpc.o
+ .debug_info    0x0000000000005689     0x1138 tolpc_fn.o
+ .debug_info    0x00000000000067c1      0x160 uuencode.o
+
+.debug_abbrev   0x0000000000000000      0x970
+ *(.debug_abbrev)
+ .debug_abbrev  0x0000000000000000      0x235 load_bfd.o
+ .debug_abbrev  0x0000000000000235      0x2c2 tolpc.o
+ .debug_abbrev  0x00000000000004f7      0x381 tolpc_fn.o
+ .debug_abbrev  0x0000000000000878       0xf8 uuencode.o
+
+.debug_line     0x0000000000000000      0x95b
+ *(.debug_line)
+ .debug_line    0x0000000000000000      0x15f load_bfd.o
+ .debug_line    0x000000000000015f      0x2de tolpc.o
+ .debug_line    0x000000000000043d      0x45f tolpc_fn.o
+ .debug_line    0x000000000000089c       0xbf uuencode.o
+
+.debug_frame    0x0000000000000000      0x3e4
+ *(.debug_frame)
+ .debug_frame   0x0000000000000000       0x34 load_bfd.o
+ .debug_frame   0x0000000000000034      0x130 tolpc.o
+ .debug_frame   0x0000000000000164      0x234 tolpc_fn.o
+ .debug_frame   0x0000000000000398       0x4c uuencode.o
+
+.debug_str      0x0000000000000000     0x9bfe
+ *(.debug_str)
+ .debug_str     0x0000000000000000     0x9575 load_bfd.o
+                                       0x9764 (size before relaxing)
+ .debug_str     0x0000000000009575      0x2d7 tolpc.o
+                                        0x59d (size before relaxing)
+ .debug_str     0x000000000000984c      0x319 tolpc_fn.o
+                                        0x68e (size before relaxing)
+ .debug_str     0x0000000000009b65       0x99 uuencode.o
+                                        0x124 (size before relaxing)
+
+.debug_loc      0x0000000000000000     0x1284
+ *(.debug_loc)
+ .debug_loc     0x0000000000000000      0x15e load_bfd.o
+ .debug_loc     0x000000000000015e      0x517 tolpc.o
+ .debug_loc     0x0000000000000675      0xb15 tolpc_fn.o
+ .debug_loc     0x000000000000118a       0xfa uuencode.o
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges   0x0000000000000000       0xb0
+ *(.debug_ranges)
+ .debug_ranges  0x0000000000000000       0x20 tolpc.o
+ .debug_ranges  0x0000000000000020       0x90 tolpc_fn.o
+
+.gnu.attributes
+ *(.gnu.attributes)
+
+/DISCARD/
+ *(.note.GNU-stack)
+ *(.gnu_debuglink)
+ *(.gnu.lto_*)
+OUTPUT(/home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/bin-utils/tolpc elf32-i386)

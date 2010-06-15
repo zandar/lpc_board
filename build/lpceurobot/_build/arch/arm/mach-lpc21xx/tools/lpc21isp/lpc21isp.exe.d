@@ -1,0 +1,19 @@
+/home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/bin-utils/lpc21isp: \
+  /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/crt1.o  \
+  /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/crti.o  \
+  /usr/lib/gcc/i486-linux-gnu/4.4.3/crtbegin.o  \
+  adprog.o  \
+  lpc21isp.o  \
+  lpcprog.o  \
+  lpcterm.o  \
+  /usr/lib/gcc/i486-linux-gnu/4.4.3/libgcc.a  \
+  /usr/lib/gcc/i486-linux-gnu/4.4.3/libgcc_s.so  \
+  /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/libc.so  \
+  /lib/libc.so.6  \
+  /usr/lib/libc_nonshared.a  \
+  /lib/ld-linux.so.2  \
+  /usr/lib/gcc/i486-linux-gnu/4.4.3/libgcc.a  \
+  /usr/lib/gcc/i486-linux-gnu/4.4.3/libgcc_s.so  \
+  /usr/lib/gcc/i486-linux-gnu/4.4.3/crtend.o  \
+  /usr/lib/gcc/i486-linux-gnu/4.4.3/../../../../lib/crtn.o  \
+

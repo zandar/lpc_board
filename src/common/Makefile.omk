@@ -1,0 +1,5 @@
+#lib_LIBRARIES = can
+#can_SOURCES =
+
+include_HEADERS = can_ids.h can_msg_masks.h can_msg_def.h
+
