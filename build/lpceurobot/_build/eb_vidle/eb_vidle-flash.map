@@ -17,9 +17,9 @@ Allocating common symbols
 Common symbol       size              file
 
 adc_val             0x10              main.o
-cpu_ref_hz          0x4               main.o
-cpu_sys_hz          0x4               main.o
-msec_time           0x4               main.o
+cpu_ref_hz          0x4               lcd.o
+cpu_sys_hz          0x4               lcd.o
+msec_time           0x4               lcd.o
 counter             0x4               main.o
 data                0x7d0             main.o
 
@@ -42,7 +42,7 @@ LOAD /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compi
  .ivec          0x0000000000000000       0x40 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/crt0.o
                 0x0000000000000000                _boot
 
-.text           0x0000000000000040     0x11a8
+.text           0x0000000000000040     0x12b8
  *crt0.o(.text)
  .text          0x0000000000000040      0x114 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/crt0.o
                 0x0000000000000040                _mainCRTStartup
@@ -57,88 +57,91 @@ LOAD /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compi
                 0x0000000000000154                __libc_init_array
  .text          0x0000000000000190       0x80 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/hwinit.o
                 0x0000000000000190                __hardware_init
- .text          0x0000000000000210      0x2b8 lcd.o
+ .text          0x0000000000000210      0x2f0 lcd.o
                 0x0000000000000210                lcd_wait
-                0x0000000000000240                lcd_out_data4
-                0x000000000000026c                lcd_write_nibbles
-                0x0000000000000308                lcd_write_control
-                0x0000000000000324                lcd_init
-                0x000000000000047c                lcd_putchar
-                0x0000000000000498                lcd_print
- .text          0x00000000000004c8      0x358 main.o
-                0x00000000000004c8                set_irq_handler
-                0x00000000000004f4                init_timer0
-                0x0000000000000530                timer0_irq
-                0x0000000000000590                start_button
-                0x00000000000005b4                blink_led
-                0x0000000000000608                save_adc
-                0x0000000000000690                send_message
-                0x00000000000006f8                init_periphery
-                0x0000000000000768                main
- .text          0x0000000000000820      0x11c uar.o
-                0x0000000000000820                init_uart
-                0x000000000000084c                uart_get_char
-                0x0000000000000850                uart_send_char
-                0x0000000000000858                send_rs_int
-                0x00000000000008f0                send_rs_str
- .text          0x000000000000093c       0x48 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libeurobothw.a(error.o)
-                0x000000000000093c                error
- .text          0x0000000000000984      0x3bc /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libeurobothw.a(startcfg.o)
-                0x0000000000000984                wait
-                0x0000000000000988                deb_led
-                0x0000000000000a44                init_PLL
-                0x0000000000000bb4                get_sys_speed
-                0x0000000000000bfc                init_MAM
-                0x0000000000000ca0                set_APB
-                0x0000000000000cb8                get_apb_speed
- .text          0x0000000000000d40      0x12c /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libebb.a(adc.o)
-                0x0000000000000d40                adc_isr
-                0x0000000000000e1c                init_adc
- .text          0x0000000000000e6c      0x238 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libebb.a(uart.o)
-                0x0000000000000e6c                init_uart0
-                0x0000000000000f3c                uart1GetCh
-                0x0000000000000f60                uart0GetCh
-                0x0000000000000f84                uart1SendCh
-                0x0000000000000fac                uart0SendCh
-                0x0000000000000fd4                init_uart1
- .text          0x00000000000010a4      0x140 /usr/arm-elf/gcc/4.4.4/bin/../lib/gcc/arm-elf/4.4.4/libgcc.a(_divsi3.o)
-                0x00000000000010a4                __aeabi_idiv
-                0x00000000000010a4                __divsi3
-                0x00000000000011cc                __aeabi_idivmod
- .text          0x00000000000011e4        0x4 /usr/arm-elf/gcc/4.4.4/bin/../lib/gcc/arm-elf/4.4.4/libgcc.a(_dvmd_tls.o)
-                0x00000000000011e4                __aeabi_ldiv0
-                0x00000000000011e4                __div0
-                0x00000000000011e4                __aeabi_idiv0
+                0x000000000000023c                lcd_out_data4
+                0x0000000000000268                lcd_write_nibbles
+                0x0000000000000348                lcd_write_control
+                0x0000000000000364                lcd_gotoxy
+                0x0000000000000384                lcd_init
+                0x00000000000004b4                lcd_putchar
+                0x00000000000004d0                lcd_print
+ .text          0x0000000000000500      0x430 main.o
+                0x0000000000000500                set_irq_handler
+                0x000000000000052c                init_timer0
+                0x0000000000000568                timer0_irq
+                0x00000000000005c8                blink_led
+                0x000000000000061c                start_button
+                0x000000000000065c                rotate_cursor
+                0x00000000000006d8                send_message
+                0x0000000000000778                save_adc
+                0x0000000000000800                init_periphery
+                0x0000000000000870                main
+ .text          0x0000000000000930      0x11c uar.o
+                0x0000000000000930                init_uart
+                0x000000000000095c                uart_get_char
+                0x0000000000000960                uart_send_char
+                0x0000000000000968                send_rs_int
+                0x0000000000000a00                send_rs_str
+ .text          0x0000000000000a4c       0x48 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libeurobothw.a(error.o)
+                0x0000000000000a4c                error
+ .text          0x0000000000000a94      0x3bc /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libeurobothw.a(startcfg.o)
+                0x0000000000000a94                wait
+                0x0000000000000a98                deb_led
+                0x0000000000000b54                init_PLL
+                0x0000000000000cc4                get_sys_speed
+                0x0000000000000d0c                init_MAM
+                0x0000000000000db0                set_APB
+                0x0000000000000dc8                get_apb_speed
+ .text          0x0000000000000e50      0x12c /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libebb.a(adc.o)
+                0x0000000000000e50                adc_isr
+                0x0000000000000f2c                init_adc
+ .text          0x0000000000000f7c      0x238 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libebb.a(uart.o)
+                0x0000000000000f7c                init_uart0
+                0x000000000000104c                uart1GetCh
+                0x0000000000001070                uart0GetCh
+                0x0000000000001094                uart1SendCh
+                0x00000000000010bc                uart0SendCh
+                0x00000000000010e4                init_uart1
+ .text          0x00000000000011b4      0x140 /usr/arm-elf/gcc/4.4.4/bin/../lib/gcc/arm-elf/4.4.4/libgcc.a(_divsi3.o)
+                0x00000000000011b4                __aeabi_idiv
+                0x00000000000011b4                __divsi3
+                0x00000000000012dc                __aeabi_idivmod
+ .text          0x00000000000012f4        0x4 /usr/arm-elf/gcc/4.4.4/bin/../lib/gcc/arm-elf/4.4.4/libgcc.a(_dvmd_tls.o)
+                0x00000000000012f4                __aeabi_ldiv0
+                0x00000000000012f4                __div0
+                0x00000000000012f4                __aeabi_idiv0
  *(.glue_7)
  .glue_7        0x0000000000000000        0x0 linker stubs
  *(.glue_7t)
  .glue_7t       0x0000000000000000        0x0 linker stubs
-                0x00000000000011e8                . = ALIGN (0x4)
-                0x00000000000011e8                _etext = .
+                0x00000000000012f8                . = ALIGN (0x4)
+                0x00000000000012f8                _etext = .
 
-.vfp11_veneer   0x00000000000011e8        0x0
+.vfp11_veneer   0x00000000000012f8        0x0
  .vfp11_veneer  0x0000000000000000        0x0 linker stubs
 
-.v4_bx          0x00000000000011e8        0x0
+.v4_bx          0x00000000000012f8        0x0
  .v4_bx         0x0000000000000000        0x0 linker stubs
 
-.rodata         0x00000000000011e8       0x14
+.rodata         0x00000000000012f8       0x54
  *(.rodata)
+ .rodata        0x00000000000012f8        0x4 main.o
  *(.rodata*)
  .rodata.str1.4
-                0x00000000000011e8       0x14 main.o
-                0x00000000000011fc                . = ALIGN (0x4)
-                0x00000000000011fc                PROVIDE (__init_array_start, .)
+                0x00000000000012fc       0x50 main.o
+                0x000000000000134c                . = ALIGN (0x4)
+                0x000000000000134c                PROVIDE (__init_array_start, .)
 
-.init_array     0x00000000000011fc        0x4
+.init_array     0x000000000000134c        0x4
  *(.init_array)
- .init_array    0x00000000000011fc        0x4 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/hwinit.o
-                0x00000000000011fc                fp
-                0x0000000000001200                . = ALIGN (0x4)
-                0x0000000000001200                PROVIDE (__init_array_end, .)
-                0x0000000000001200                _datainit = LOADADDR (.data)
+ .init_array    0x000000000000134c        0x4 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/hwinit.o
+                0x000000000000134c                fp
+                0x0000000000001350                . = ALIGN (0x4)
+                0x0000000000001350                PROVIDE (__init_array_end, .)
+                0x0000000000001350                _datainit = LOADADDR (.data)
 
-.data           0x0000000040000000        0x0 load address 0x0000000000001200
+.data           0x0000000040000000        0x0 load address 0x0000000000001350
                 0x0000000040000000                _data = .
  *(.data)
  .data          0x0000000040000000        0x0 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/crt0.o
@@ -156,42 +159,43 @@ LOAD /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compi
                 0x0000000040000000                . = ALIGN (0x4)
                 0x0000000040000000                _edata = .
 
-.bss            0x0000000040000000      0x810 load address 0x0000000000001200
+.bss            0x0000000040000000      0x814 load address 0x0000000000001350
                 0x0000000040000000                __bss_start = .
                 0x0000000040000000                __bss_start__ = .
  *(.bss)
  .bss           0x0000000040000000        0x0 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/crt0.o
  .bss           0x0000000040000000        0x0 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/initarray.o
  .bss           0x0000000040000000        0x0 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/hwinit.o
- .bss           0x0000000040000000        0x8 lcd.o
- .bss           0x0000000040000008       0x18 main.o
-                0x0000000040000008                timer_usec
-                0x0000000040000010                timer_msec
+ .bss           0x0000000040000000        0x4 lcd.o
+ .bss           0x0000000040000004       0x20 main.o
+                0x0000000040000004                timer_usec
+                0x000000004000000c                timer_msec
                 0x0000000040000014                start_measuring
- .bss           0x0000000040000020        0x0 uar.o
- .bss           0x0000000040000020        0x0 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libeurobothw.a(error.o)
- .bss           0x0000000040000020        0x0 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libeurobothw.a(startcfg.o)
- .bss           0x0000000040000020        0x0 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libebb.a(adc.o)
- .bss           0x0000000040000020        0x0 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libebb.a(uart.o)
- .bss           0x0000000040000020        0x0 /usr/arm-elf/gcc/4.4.4/bin/../lib/gcc/arm-elf/4.4.4/libgcc.a(_divsi3.o)
- .bss           0x0000000040000020        0x0 /usr/arm-elf/gcc/4.4.4/bin/../lib/gcc/arm-elf/4.4.4/libgcc.a(_dvmd_tls.o)
+ .bss           0x0000000040000024        0x0 uar.o
+ .bss           0x0000000040000024        0x0 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libeurobothw.a(error.o)
+ .bss           0x0000000040000024        0x0 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libeurobothw.a(startcfg.o)
+ .bss           0x0000000040000024        0x0 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libebb.a(adc.o)
+ .bss           0x0000000040000024        0x0 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libebb.a(uart.o)
+ .bss           0x0000000040000024        0x0 /usr/arm-elf/gcc/4.4.4/bin/../lib/gcc/arm-elf/4.4.4/libgcc.a(_divsi3.o)
+ .bss           0x0000000040000024        0x0 /usr/arm-elf/gcc/4.4.4/bin/../lib/gcc/arm-elf/4.4.4/libgcc.a(_dvmd_tls.o)
  *(COMMON)
- COMMON         0x0000000040000020      0x7f0 main.o
-                0x0000000040000020                adc_val
-                0x0000000040000030                cpu_ref_hz
-                0x0000000040000034                cpu_sys_hz
-                0x0000000040000038                msec_time
-                0x000000004000003c                counter
-                0x0000000040000040                data
-                0x0000000040000810                . = ALIGN (0x4)
-                0x0000000040000810                __bss_end__ = .
+ COMMON         0x0000000040000024        0xc lcd.o
+                0x0000000040000024                cpu_ref_hz
+                0x0000000040000028                cpu_sys_hz
+                0x000000004000002c                msec_time
+ COMMON         0x0000000040000030      0x7e4 main.o
+                0x0000000040000030                adc_val
+                0x0000000040000040                counter
+                0x0000000040000044                data
+                0x0000000040000814                . = ALIGN (0x4)
+                0x0000000040000814                __bss_end__ = .
 
-.stack          0x0000000040000810      0x400 load address 0x0000000000001200
-                0x0000000040000c10                . = (. + STACK_SIZE)
- *fill*         0x0000000040000810      0x400 00
-                0x0000000040000c10                PROVIDE (_stack, .)
-                0x0000000040000c10                _end = .
-                0x0000000040000c10                PROVIDE (end, .)
+.stack          0x0000000040000814      0x400 load address 0x0000000000001350
+                0x0000000040000c14                . = (. + STACK_SIZE)
+ *fill*         0x0000000040000814      0x400 00
+                0x0000000040000c14                PROVIDE (_stack, .)
+                0x0000000040000c14                _end = .
+                0x0000000040000c14                PROVIDE (end, .)
 
 .stab
  *(.stab)
@@ -292,117 +296,117 @@ LOAD /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compi
                 0x0000000000000168       0x20 /usr/arm-elf/gcc/4.4.4/bin/../lib/gcc/arm-elf/4.4.4/libgcc.a(_dvmd_tls.o)
 
 .debug_pubnames
-                0x0000000000000000      0x3bd
+                0x0000000000000000      0x40a
  *(.debug_pubnames)
  .debug_pubnames
                 0x0000000000000000       0x28 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/initarray.o
  .debug_pubnames
                 0x0000000000000028       0x2d /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/hwinit.o
  .debug_pubnames
-                0x0000000000000055       0x88 lcd.o
+                0x0000000000000055       0xc3 lcd.o
  .debug_pubnames
-                0x00000000000000dd      0x11d main.o
+                0x0000000000000118      0x12f main.o
  .debug_pubnames
-                0x00000000000001fa       0x65 uar.o
+                0x0000000000000247       0x65 uar.o
  .debug_pubnames
-                0x000000000000025f       0x1c /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libeurobothw.a(error.o)
+                0x00000000000002ac       0x1c /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libeurobothw.a(error.o)
  .debug_pubnames
-                0x000000000000027b       0x71 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libeurobothw.a(startcfg.o)
+                0x00000000000002c8       0x71 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libeurobothw.a(startcfg.o)
  .debug_pubnames
-                0x00000000000002ec       0x37 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libebb.a(adc.o)
+                0x0000000000000339       0x37 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libebb.a(adc.o)
  .debug_pubnames
-                0x0000000000000323       0x9a /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libebb.a(uart.o)
+                0x0000000000000370       0x9a /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libebb.a(uart.o)
 
-.debug_info     0x0000000000000000     0x157e
+.debug_info     0x0000000000000000     0x1696
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x0000000000000000       0xfc /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/crt0.o
  .debug_info    0x00000000000000fc       0xdc /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/initarray.o
  .debug_info    0x00000000000001d8      0x187 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/hwinit.o
- .debug_info    0x000000000000035f      0x26a lcd.o
- .debug_info    0x00000000000005c9      0x589 main.o
- .debug_info    0x0000000000000b52      0x186 uar.o
- .debug_info    0x0000000000000cd8      0x232 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libeurobothw.a(error.o)
- .debug_info    0x0000000000000f0a      0x1e9 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libeurobothw.a(startcfg.o)
- .debug_info    0x00000000000010f3       0xf6 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libebb.a(adc.o)
- .debug_info    0x00000000000011e9      0x235 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libebb.a(uart.o)
- .debug_info    0x000000000000141e       0xb0 /usr/arm-elf/gcc/4.4.4/bin/../lib/gcc/arm-elf/4.4.4/libgcc.a(_divsi3.o)
- .debug_info    0x00000000000014ce       0xb0 /usr/arm-elf/gcc/4.4.4/bin/../lib/gcc/arm-elf/4.4.4/libgcc.a(_dvmd_tls.o)
+ .debug_info    0x000000000000035f      0x360 lcd.o
+ .debug_info    0x00000000000006bf      0x5ab main.o
+ .debug_info    0x0000000000000c6a      0x186 uar.o
+ .debug_info    0x0000000000000df0      0x232 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libeurobothw.a(error.o)
+ .debug_info    0x0000000000001022      0x1e9 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libeurobothw.a(startcfg.o)
+ .debug_info    0x000000000000120b       0xf6 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libebb.a(adc.o)
+ .debug_info    0x0000000000001301      0x235 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libebb.a(uart.o)
+ .debug_info    0x0000000000001536       0xb0 /usr/arm-elf/gcc/4.4.4/bin/../lib/gcc/arm-elf/4.4.4/libgcc.a(_divsi3.o)
+ .debug_info    0x00000000000015e6       0xb0 /usr/arm-elf/gcc/4.4.4/bin/../lib/gcc/arm-elf/4.4.4/libgcc.a(_dvmd_tls.o)
 
-.debug_abbrev   0x0000000000000000      0x9ab
+.debug_abbrev   0x0000000000000000      0x9cd
  *(.debug_abbrev)
  .debug_abbrev  0x0000000000000000       0x12 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/crt0.o
  .debug_abbrev  0x0000000000000012       0xa2 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/initarray.o
  .debug_abbrev  0x00000000000000b4       0xef /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/hwinit.o
- .debug_abbrev  0x00000000000001a3      0x135 lcd.o
- .debug_abbrev  0x00000000000002d8      0x1e0 main.o
- .debug_abbrev  0x00000000000004b8      0x140 uar.o
- .debug_abbrev  0x00000000000005f8       0xfe /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libeurobothw.a(error.o)
- .debug_abbrev  0x00000000000006f6      0x116 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libeurobothw.a(startcfg.o)
- .debug_abbrev  0x000000000000080c       0xb6 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libebb.a(adc.o)
- .debug_abbrev  0x00000000000008c2       0xc1 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libebb.a(uart.o)
- .debug_abbrev  0x0000000000000983       0x14 /usr/arm-elf/gcc/4.4.4/bin/../lib/gcc/arm-elf/4.4.4/libgcc.a(_divsi3.o)
- .debug_abbrev  0x0000000000000997       0x14 /usr/arm-elf/gcc/4.4.4/bin/../lib/gcc/arm-elf/4.4.4/libgcc.a(_dvmd_tls.o)
+ .debug_abbrev  0x00000000000001a3      0x16f lcd.o
+ .debug_abbrev  0x0000000000000312      0x1c8 main.o
+ .debug_abbrev  0x00000000000004da      0x140 uar.o
+ .debug_abbrev  0x000000000000061a       0xfe /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libeurobothw.a(error.o)
+ .debug_abbrev  0x0000000000000718      0x116 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libeurobothw.a(startcfg.o)
+ .debug_abbrev  0x000000000000082e       0xb6 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libebb.a(adc.o)
+ .debug_abbrev  0x00000000000008e4       0xc1 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libebb.a(uart.o)
+ .debug_abbrev  0x00000000000009a5       0x14 /usr/arm-elf/gcc/4.4.4/bin/../lib/gcc/arm-elf/4.4.4/libgcc.a(_divsi3.o)
+ .debug_abbrev  0x00000000000009b9       0x14 /usr/arm-elf/gcc/4.4.4/bin/../lib/gcc/arm-elf/4.4.4/libgcc.a(_dvmd_tls.o)
 
-.debug_line     0x0000000000000000      0xd13
+.debug_line     0x0000000000000000      0xd38
  *(.debug_line)
  .debug_line    0x0000000000000000       0xf0 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/crt0.o
  .debug_line    0x00000000000000f0       0xec /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/initarray.o
  .debug_line    0x00000000000001dc      0x148 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/hwinit.o
- .debug_line    0x0000000000000324      0x15e lcd.o
- .debug_line    0x0000000000000482      0x246 main.o
- .debug_line    0x00000000000006c8       0xc4 uar.o
- .debug_line    0x000000000000078c      0x141 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libeurobothw.a(error.o)
- .debug_line    0x00000000000008cd      0x143 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libeurobothw.a(startcfg.o)
- .debug_line    0x0000000000000a10       0xad /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libebb.a(adc.o)
- .debug_line    0x0000000000000abd      0x13a /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libebb.a(uart.o)
- .debug_line    0x0000000000000bf7       0xaa /usr/arm-elf/gcc/4.4.4/bin/../lib/gcc/arm-elf/4.4.4/libgcc.a(_divsi3.o)
- .debug_line    0x0000000000000ca1       0x72 /usr/arm-elf/gcc/4.4.4/bin/../lib/gcc/arm-elf/4.4.4/libgcc.a(_dvmd_tls.o)
+ .debug_line    0x0000000000000324      0x175 lcd.o
+ .debug_line    0x0000000000000499      0x254 main.o
+ .debug_line    0x00000000000006ed       0xc4 uar.o
+ .debug_line    0x00000000000007b1      0x141 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libeurobothw.a(error.o)
+ .debug_line    0x00000000000008f2      0x143 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libeurobothw.a(startcfg.o)
+ .debug_line    0x0000000000000a35       0xad /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libebb.a(adc.o)
+ .debug_line    0x0000000000000ae2      0x13a /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libebb.a(uart.o)
+ .debug_line    0x0000000000000c1c       0xaa /usr/arm-elf/gcc/4.4.4/bin/../lib/gcc/arm-elf/4.4.4/libgcc.a(_divsi3.o)
+ .debug_line    0x0000000000000cc6       0x72 /usr/arm-elf/gcc/4.4.4/bin/../lib/gcc/arm-elf/4.4.4/libgcc.a(_dvmd_tls.o)
 
-.debug_frame    0x0000000000000000      0x408
+.debug_frame    0x0000000000000000      0x434
  *(.debug_frame)
  .debug_frame   0x0000000000000000       0x2c /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/initarray.o
  .debug_frame   0x000000000000002c       0x28 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/hwinit.o
- .debug_frame   0x0000000000000054       0xa0 lcd.o
- .debug_frame   0x00000000000000f4       0xe4 main.o
- .debug_frame   0x00000000000001d8       0x88 uar.o
- .debug_frame   0x0000000000000260       0x20 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libeurobothw.a(error.o)
- .debug_frame   0x0000000000000280       0x90 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libeurobothw.a(startcfg.o)
- .debug_frame   0x0000000000000310       0x40 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libebb.a(adc.o)
- .debug_frame   0x0000000000000350       0x90 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libebb.a(uart.o)
- .debug_frame   0x00000000000003e0       0x28 /usr/arm-elf/gcc/4.4.4/bin/../lib/gcc/arm-elf/4.4.4/libgcc.a(_divsi3.o)
+ .debug_frame   0x0000000000000054       0xa8 lcd.o
+ .debug_frame   0x00000000000000fc      0x108 main.o
+ .debug_frame   0x0000000000000204       0x88 uar.o
+ .debug_frame   0x000000000000028c       0x20 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libeurobothw.a(error.o)
+ .debug_frame   0x00000000000002ac       0x90 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libeurobothw.a(startcfg.o)
+ .debug_frame   0x000000000000033c       0x40 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libebb.a(adc.o)
+ .debug_frame   0x000000000000037c       0x90 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libebb.a(uart.o)
+ .debug_frame   0x000000000000040c       0x28 /usr/arm-elf/gcc/4.4.4/bin/../lib/gcc/arm-elf/4.4.4/libgcc.a(_divsi3.o)
 
-.debug_str      0x0000000000000000      0x73e
+.debug_str      0x0000000000000000      0x75b
  *(.debug_str)
  .debug_str     0x0000000000000000      0x110 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/initarray.o
                                         0x149 (size before relaxing)
  .debug_str     0x0000000000000110       0xd1 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/hwinit.o
                                         0x173 (size before relaxing)
- .debug_str     0x00000000000001e1       0xae lcd.o
-                                        0x10c (size before relaxing)
- .debug_str     0x000000000000028f      0x199 main.o
-                                        0x28a (size before relaxing)
- .debug_str     0x0000000000000428       0x93 uar.o
+ .debug_str     0x00000000000001e1       0xfd lcd.o
+                                        0x184 (size before relaxing)
+ .debug_str     0x00000000000002de      0x167 main.o
+                                        0x290 (size before relaxing)
+ .debug_str     0x0000000000000445       0x93 uar.o
                                          0xa9 (size before relaxing)
- .debug_str     0x00000000000004bb       0x84 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libeurobothw.a(error.o)
+ .debug_str     0x00000000000004d8       0x84 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libeurobothw.a(error.o)
                                          0xfc (size before relaxing)
- .debug_str     0x000000000000053f       0xc0 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libeurobothw.a(startcfg.o)
+ .debug_str     0x000000000000055c       0xc0 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libeurobothw.a(startcfg.o)
                                         0x164 (size before relaxing)
- .debug_str     0x00000000000005ff       0x74 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libebb.a(adc.o)
+ .debug_str     0x000000000000061c       0x74 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libebb.a(adc.o)
                                         0x111 (size before relaxing)
- .debug_str     0x0000000000000673       0xcb /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libebb.a(uart.o)
+ .debug_str     0x0000000000000690       0xcb /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libebb.a(uart.o)
                                         0x177 (size before relaxing)
 
-.debug_loc      0x0000000000000000      0x5ff
+.debug_loc      0x0000000000000000      0x645
  *(.debug_loc)
  .debug_loc     0x0000000000000000       0x1f /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/initarray.o
  .debug_loc     0x000000000000001f       0x1f /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/hwinit.o
- .debug_loc     0x000000000000003e       0xf3 lcd.o
- .debug_loc     0x0000000000000131       0xe7 main.o
- .debug_loc     0x0000000000000218       0xf5 uar.o
- .debug_loc     0x000000000000030d       0x13 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libeurobothw.a(error.o)
- .debug_loc     0x0000000000000320      0x11e /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libeurobothw.a(startcfg.o)
- .debug_loc     0x000000000000043e       0x71 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libebb.a(adc.o)
- .debug_loc     0x00000000000004af      0x150 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libebb.a(uart.o)
+ .debug_loc     0x000000000000003e       0xef lcd.o
+ .debug_loc     0x000000000000012d      0x131 main.o
+ .debug_loc     0x000000000000025e       0xf5 uar.o
+ .debug_loc     0x0000000000000353       0x13 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libeurobothw.a(error.o)
+ .debug_loc     0x0000000000000366      0x11e /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libeurobothw.a(startcfg.o)
+ .debug_loc     0x0000000000000484       0x71 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libebb.a(adc.o)
+ .debug_loc     0x00000000000004f5      0x150 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libebb.a(uart.o)
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -434,8 +438,8 @@ OUTPUT(/media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_com
 .debug_ranges   0x0000000000000000      0x368
  .debug_ranges  0x0000000000000000       0x20 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/crt0.o
  .debug_ranges  0x0000000000000020       0x68 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/hwinit.o
- .debug_ranges  0x0000000000000088       0x18 lcd.o
- .debug_ranges  0x00000000000000a0      0x1b0 main.o
+ .debug_ranges  0x0000000000000088       0x30 lcd.o
+ .debug_ranges  0x00000000000000b8      0x198 main.o
  .debug_ranges  0x0000000000000250       0x30 uar.o
  .debug_ranges  0x0000000000000280       0xb0 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libeurobothw.a(error.o)
  .debug_ranges  0x0000000000000330       0x38 /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libeurobothw.a(startcfg.o)

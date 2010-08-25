@@ -30,15 +30,15 @@
 
 #include <lpc21xx.h>                            /* LPC21xx definitions */
 #include <types.h>
-#include <deb_led.h>
 #include <system_def.h>	
-#include <string.h>
+//#include <string.h>
 #include <deb_led.h>	
 #include "uar.h"
 #include <stdbool.h>
 #include "def.h"
 #include "lcd.h"
 #include <adc.h>
+
 
 #define ADC_ISR		1
 
@@ -53,9 +53,6 @@ unsigned int counter;
 unsigned int data[SAMPLES];
 
 bool start_measuring = false;
-
-//struct fsm fsm_vidle;
-
 
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -101,6 +98,7 @@ void timer0_irq() {
 	VICVectAddr = 0;
 }
 
+
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 void init_periphery(void){
 
@@ -120,6 +118,8 @@ void start_button(void)
 	if((IO0PIN & (1<<START_PIN)) == 0)
 	{
 		start_measuring = true;
+		lcd_gotoxy(0,1);
+		lcd_print("Measurement    ");
 	}
 }
 
@@ -134,9 +134,28 @@ void blink_led()
 	}
 }
 
+void rotate_cursor()
+{
+	static uint32_t time = 0;
+	
+	static unsigned char cnt = 0;
+	
+	unsigned char cursor[4] = {'|','/','-','\\'};
+	
+	if(timer_msec >= time + 200)	
+	{
+		time = timer_msec;
+		lcd_gotoxy(15,1);
+		lcd_putchar(cursor[cnt++]);
+		if(cnt == 3) cnt = 0;
+	}
+}
+
 void save_adc()
 {
 	static uint32_t adc_time = 0;
+	
+	rotate_cursor();
 	
 	if(timer_msec >= adc_time + ADC_PERIOD)	
 	{
@@ -151,8 +170,14 @@ void send_message()
 {
 	unsigned int i = 0;
 	deb_led_on(LEDB);
+	
+	lcd_gotoxy(0,1);
+	lcd_print("Data transfer  ");
+	
 	while(i < SAMPLES)
 	{
+		blink_led();
+		rotate_cursor();
 		send_rs_int(i);
 		send_rs_str(" ");
 		send_rs_int(data[i]);
@@ -160,6 +185,8 @@ void send_message()
 		i++;
 	}
 	deb_led_off(LEDB);
+	lcd_gotoxy(0,1);
+	lcd_print("Ready           ");
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -174,9 +201,10 @@ int main(void)
 	SET_PIN(PINSEL0, START_PIN, PINSEL_0);		// inicializace start pinu
 	IO0DIR &= ~(1<<START_PIN);
 	
-	
 	lcd_init();
 	lcd_print("ADC scope");
+	lcd_gotoxy(0,1);
+	lcd_print("Ready");
 	
 	while(1){
 		if(start_measuring)
