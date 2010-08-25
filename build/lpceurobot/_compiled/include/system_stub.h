@@ -1,1 +1,1 @@
-/home/zandar/EUROBOT/eurobot/build/lpceurobot/arch/arm/generic/libs/misc/system_stub.h
+/media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/arch/arm/generic/libs/misc/system_stub.h

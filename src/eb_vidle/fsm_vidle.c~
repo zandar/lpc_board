@@ -51,7 +51,6 @@ static bool do_control(struct fsm *fsm, int P)
 	int e = fsm->req_pos - fsm->act_pos;
 	int action = (P*e) / 10;		// ORIGINAL: int action = P*e;
 
-
 	engine_A_dir(action < 0);
 //#define BANG_BANG
 #ifdef BANG_BANG
@@ -64,10 +63,10 @@ static bool do_control(struct fsm *fsm, int P)
 	engine_A_en(ENGINE_EN_ON);
 
 
-	if (fsm->req_pos > fsm->start_pos)
-		finished = fsm->act_pos > fsm->req_pos - DEAD_ZONE;
+	if (fsm->req_target > fsm->start_pos)
+		finished = fsm->act_pos > fsm->req_target - DEAD_ZONE;
 	else
-		finished = fsm->act_pos < fsm->req_pos + DEAD_ZONE;
+		finished = fsm->act_pos < fsm->req_target + DEAD_ZONE;
 
 	return finished;
 }
@@ -113,23 +112,28 @@ static void move(struct fsm *fsm, enum event event)
 			fsm->req_pos = fsm->start_pos;
 		break;
 	case EVENT_DO:
+		if (fsm->can_req_position != fsm->req_target) {
+			fsm->flags |= CAN_VIDLE_TIMEOUT;
+			fsm->current_state = wait_for_cmd;
+		}
 		if(fsm->req_spd != 0 && counter++ >= 10)
 		{
 			counter = 0;
-			if(fsm->req_target > fsm->start_pos)
+			if(fsm->req_target > fsm->start_pos) {
 				  fsm->req_pos = XMIN(fsm->req_pos + fsm->req_spd,fsm->req_target);
-			else
+			} else {
 				  fsm->req_pos = XMAX(fsm->req_pos - fsm->req_spd,fsm->req_target);
+			}
 		}
-		if (timer_msec - fsm->time_start > (fsm->req_spd == 0 ? 1000 : 2000)) {
-			fsm->flags = CAN_VIDLE_TIMEOUT;
+		if (timer_msec - fsm->time_start > (fsm->req_spd == 0 ? 1000 : 3000)) {
+			fsm->flags |= CAN_VIDLE_TIMEOUT;
+			fsm->can_response = fsm->req_target;
 			fsm->current_state = wait_for_cmd;
 			fsm->req_pos = fsm->act_pos;
-		}
-			
-		finished = do_control(fsm, fsm->req_spd ? 5 : 2);
+		}			
+		finished = do_control(fsm, fsm->req_spd ? 2 : 2);
 		if (finished && fsm->req_pos == fsm->req_target) {
-			fsm->can_response = fsm->req_pos;
+			fsm->can_response = fsm->req_target;
 			fsm->current_state = wait_for_cmd;
 		}
 		break;

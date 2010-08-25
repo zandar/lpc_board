@@ -22,6 +22,7 @@ struct fsm {
 	int32_t req_pos;			// requested position
 	int32_t req_spd;
 	int32_t req_target;
+	volatile int32_t can_req_spd;
 	volatile uint32_t can_req_position;	// next requested position
 	int32_t start_pos;
 	uint32_t can_response; 			// when the move is done, the value here equals to the req_pos

@@ -7,8 +7,8 @@ endif
 ifeq ($(MAKERULES_DIR),)
 all : default
 .DEFAULT::
-	@echo -e "\nThe Makefile.rules has not been found in this or partent directory\n"
-else	
+	@echo -e "\nThe Makefile.rules has not been found in this or parent directory\n"
+else
 include $(MAKERULES_DIR)/Makefile.rules
 endif
 

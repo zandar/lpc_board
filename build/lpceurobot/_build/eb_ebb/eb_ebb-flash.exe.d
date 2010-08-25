@@ -1,12 +1,12 @@
-/home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/bin/eb_ebb-flash: \
-  /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/lpc21xx.ld-flash \
-  /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/crt0.o  \
-  /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/initarray.o  \
-  /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/hwinit.o  \
+/media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/bin/eb_ebb-flash: \
+  /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/lpc21xx.ld-flash \
+  /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/crt0.o  \
+  /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/initarray.o  \
+  /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/hwinit.o  \
   main.o  \
-  /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/libeurobothw.a  \
-  /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/libcan.a  \
-  /home/zandar/EUROBOT/eurobot/build/lpceurobot/_compiled/lib/libebb.a  \
-  /usr/arm-elf/gcc/4.4.3/bin/../lib/gcc/arm-elf/4.4.3/libgcc.a  \
-  /usr/arm-elf/gcc/4.4.3/bin/../lib/gcc/arm-elf/4.4.3/../../../../arm-elf/lib/libg.a  \
-  /usr/arm-elf/gcc/4.4.3/bin/../lib/gcc/arm-elf/4.4.3/../../../../arm-elf/lib/libc.a  \
+  /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libeurobothw.a  \
+  /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libcan.a  \
+  /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libebb.a  \
+  /usr/arm-elf/gcc/4.4.4/bin/../lib/gcc/arm-elf/4.4.4/libgcc.a  \
+  /usr/arm-elf/gcc/4.4.4/bin/../lib/gcc/arm-elf/4.4.4/../../../../arm-elf/lib/libg.a  \
+  /usr/arm-elf/gcc/4.4.4/bin/../lib/gcc/arm-elf/4.4.4/../../../../arm-elf/lib/libc.a  \

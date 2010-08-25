@@ -1,1 +1,1 @@
-/home/zandar/EUROBOT/eurobot/build/lpceurobot/libs4c/cmdproc/cmdio_std.h
+/media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/libs4c/cmdproc/cmdio_std.h

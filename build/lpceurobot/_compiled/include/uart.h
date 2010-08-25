@@ -1,1 +1,1 @@
-/home/zandar/EUROBOT/eurobot/build/lpceurobot/eb_ebb/uart.h
+/media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/eb_ebb/uart.h

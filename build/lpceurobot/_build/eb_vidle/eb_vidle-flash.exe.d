@@ -3,14 +3,12 @@
   /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/crt0.o  \
   /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/initarray.o  \
   /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/hwinit.o  \
-  fsm.o  \
-  fsm_vidle.o  \
+  lcd.o  \
   main.o  \
   uar.o  \
-  vhn.o  \
   /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libeurobothw.a  \
   /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libcan.a  \
   /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libebb.a  \
-  /usr/arm-elf/gcc/4.4.3/bin/../lib/gcc/arm-elf/4.4.3/libgcc.a  \
-  /usr/arm-elf/gcc/4.4.3/bin/../lib/gcc/arm-elf/4.4.3/../../../../arm-elf/lib/libg.a  \
-  /usr/arm-elf/gcc/4.4.3/bin/../lib/gcc/arm-elf/4.4.3/../../../../arm-elf/lib/libc.a  \
+  /usr/arm-elf/gcc/4.4.4/bin/../lib/gcc/arm-elf/4.4.4/libgcc.a  \
+  /usr/arm-elf/gcc/4.4.4/bin/../lib/gcc/arm-elf/4.4.4/../../../../arm-elf/lib/libg.a  \
+  /usr/arm-elf/gcc/4.4.4/bin/../lib/gcc/arm-elf/4.4.4/../../../../arm-elf/lib/libc.a  \

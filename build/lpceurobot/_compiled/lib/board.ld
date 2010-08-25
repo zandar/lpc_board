@@ -1,1 +1,1 @@
-/home/zandar/EUROBOT/eurobot/build/lpceurobot/board/arm/lpceurobot/libs/hwinit/board.ld
+/media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/board/arm/lpceurobot/libs/hwinit/board.ld

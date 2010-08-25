@@ -1,1 +1,1 @@
-/home/zandar/EUROBOT/eurobot/build/lpceurobot/arch/arm/mach-lpc21xx/libs/uart-nozen/uart_nozen.h
+/media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/arch/arm/mach-lpc21xx/libs/uart-nozen/uart_nozen.h
