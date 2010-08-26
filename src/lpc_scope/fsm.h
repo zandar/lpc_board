@@ -4,8 +4,10 @@
 #include <types.h>
 #include <stdbool.h>
 
-#define ADC_SAMPLES	500
-#define ADC_PERIOD	10	// ms
+#define ADC_SAMPLES	1000	// max.3500 samples
+#define ADC_PERIOD	10000	// us
+#define ADC_TIME	0
+#define ADC_DATA	1
 
 // events of each state of state machine
 enum event {
@@ -24,7 +26,7 @@ struct fsm {
 	volatile bool adc_start;
 	volatile bool send_samples;
 	volatile bool scope_ready;
-	int adc_data[2][ADC_SAMPLES];
+	uint16_t adc_data[2][ADC_SAMPLES];
 };
 
 void init_fsm(struct fsm *fsm, state_fcn initial_state);

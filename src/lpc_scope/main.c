@@ -4,7 +4,7 @@
  * 
  *
  *
- * @addtogroup fork
+ * @addtogroup scope
  */
 
 
@@ -12,7 +12,7 @@
  * @defgroup fork Vidle (fork) application
  */
 /**
- * @ingroup fork
+ * @ingroup scope
  * @{
  */
 
@@ -116,6 +116,7 @@ void start_button(void)
 {
 	if((IO0PIN & (1<<START_PIN)) == 0)
 	{
+		// when start button pressed, start conversion
 		fsm_scope.adc_start = true;
 	}
 }
@@ -138,11 +139,10 @@ int main(void)
 {
 	uint32_t main_time = timer_usec;
 	
-	//counter = 0;
-	
 	init_periphery();
 	
-	SET_PIN(PINSEL0, START_PIN, PINSEL_0);		// inicializace start pinu
+	/* inicializace start pinu */
+	SET_PIN(PINSEL0, START_PIN, PINSEL_0);
 	IO0DIR &= ~(1<<START_PIN);
 	
 	init_fsm(&fsm_scope, &fsm_scope_init);
@@ -150,9 +150,12 @@ int main(void)
 	while(1){
 		if(timer_usec >= main_time + 100)
 		{
+			/* run fsm every 100us */
 			main_time = timer_usec;
 			run_fsm(&fsm_scope);
 		}
+		
+		/* check start button conditon */
 		start_button();
 		blink_status_led();
 	}

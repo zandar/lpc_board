@@ -4,7 +4,7 @@
  * 
  *
  *
- * @addtogroup fork
+ * @addtogroup scope
  */
 
 
@@ -12,7 +12,7 @@
  * @defgroup fork Vidle (fork) application
  */
 /**
- * @ingroup fork
+ * @ingroup scope
  * @{
  */
 
@@ -44,9 +44,6 @@
 #define ADC_ISR		1
 
 #define TIMER_IRQ_PRIORITY	5
-
-#define ADC_SAMPLES	500
-#define ADC_PERIOD	10 // ms
 
 #define START_PIN	15		// start pin
 
@@ -119,6 +116,7 @@ void start_button(void)
 {
 	if((IO0PIN & (1<<START_PIN)) == 0)
 	{
+		// when start button presed, start conversion
 		fsm_scope.adc_start = true;
 	}
 }
@@ -151,7 +149,7 @@ int main(void)
 	init_fsm(&fsm_scope, &fsm_scope_init);
 	
 	while(1){
-		if(timer_usec >= main_time + 100)
+		if(timer_usec >= main_time + 100)	// run fsm every 100us
 		{
 			main_time = timer_usec;
 			run_fsm(&fsm_scope);

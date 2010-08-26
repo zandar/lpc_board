@@ -57,7 +57,7 @@ void rotate_cursor()
 	
 	unsigned char cursor[4] = {'|','/','-','\\'};
 	
-	if(timer_msec >= time + 200)
+	if(timer_msec >= time + 200)	
 	{
 		time = timer_msec;
 		lcd_gotoxy(15,1);
@@ -72,14 +72,14 @@ static void save_samples(struct fsm *fsm)
 	static uint16_t time_base = 0;
 	static uint16_t counter = 0;
 	
-	rotate_cursor();
+	//rotate_cursor();
 	
 	if(timer_usec >= adc_time + ADC_PERIOD)		// save ADC sample every ADC_PERIOD us
 	{
 		if(counter == 0)	// when first sample, time = 0
 		  time_base = 0;
 		else
-		  time_base = timer_usec - adc_time;	// else time = time betwen samples
+		  time_base = timer_usec - adc_time;	// else time = time from start
 		
 		adc_time = timer_usec;
 		
@@ -125,7 +125,7 @@ static void send_samples(struct fsm *fsm)
 	{
 		deb_led_on(LEDB);
 		rs_time = timer_usec;
-		rotate_cursor();
+		//rotate_cursor();
 		send_rs_int(fsm->adc_data[0][counter]);
 		send_rs_str(" ");
 		send_rs_int(fsm->adc_data[1][counter]);

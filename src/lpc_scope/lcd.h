@@ -5,15 +5,15 @@
 // WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 
 /***************************************/
-/* LCD routines for OLIMEX LPC-MT-2106 */
+/* LCD routines for OLIMEX LPC-2119 */
 /* 16x2 Character LCD 1602K            */
 /* 4-bit mode operation                */
 /***************************************/
 
 #define LCD_START_LINE1  0x00		/* DDRAM address of first char of line 1 */
 #define LCD_START_LINE2  0x40		/* DDRAM address of first char of line 2 */
-#define LCD_DDRAM  	7		/* DB7: set DD RAM address */
-#define LCD_WAIT	1500		/* Time delay betwen signals in microseconds us */
+#define LCD_DDRAM  	 7		/* DB7: set DD RAM address */
+#define LCD_WAIT	 1500		/* Time delay betwen signals in microseconds us */
 
 /* DEFINE IOMASK */
 #define  LCD_D4  0x10	//P0.04

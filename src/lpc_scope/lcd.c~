@@ -106,13 +106,13 @@ void lcd_init(){
 
 }
 
-void lcd_putchar(unsigned char c){
+void lcd_putchar(char c){
 
        lcd_rs_set();
        lcd_write_nibbles(c);
 }
 
-void lcd_print(unsigned char* str){
+void lcd_print(char* str){
       int i;
 
       //limit 1 line display for prints

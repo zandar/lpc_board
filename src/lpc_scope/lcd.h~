@@ -5,7 +5,7 @@
 // WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 
 /***************************************/
-/* LCD routines for OLIMEX LPC-MT-2106 */
+/* LCD routines for OLIMEX LPC-2119 */
 /* 16x2 Character LCD 1602K            */
 /* 4-bit mode operation                */
 /***************************************/
@@ -68,9 +68,9 @@ void lcd_init();
 
 
 /* put a character out to lcd */
-void lcd_putchar(unsigned char);
+void lcd_putchar(char);
 /* print a string */
-void lcd_print(unsigned char*);
+void lcd_print(char*);
 
 
 

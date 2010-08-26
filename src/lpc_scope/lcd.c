@@ -1,12 +1,11 @@
-#include <lpc21xx.h>                            /* LPC21xx definitions */
-#include <system_def.h>	
+#include <lpc21xx.h>
+#include <system_def.h>
 #include <deb_led.h>
 #include "def.h"
 #include "lcd.h"
 
 void lcd_wait()
 {
-      
       static uint32_t wait_time = 0;
       
       wait_time = timer_usec;
