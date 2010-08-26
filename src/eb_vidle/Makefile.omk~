@@ -2,7 +2,7 @@
 
 bin_PROGRAMS = eb_vidle
 
-eb_vidle_SOURCES = main.c uar.c
+eb_vidle_SOURCES = main.c uar.c lcd.c
 eb_vidle_LIBS = can ebb
 
 link_VARIANTS = flash

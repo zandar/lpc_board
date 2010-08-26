@@ -4,21 +4,24 @@
 #include "def.h"
 #include "lcd.h"
 
-void lcd_wait(){
+void lcd_wait()
+{
       
       static uint32_t wait_time = 0;
       
-      wait_time = timer_msec;
+      wait_time = timer_usec;
       
-      while(timer_msec <= wait_time + LCD_WAIT);
+      while(timer_usec <= wait_time + LCD_WAIT);
 }
 
-void lcd_out_data4(unsigned char val){
+void lcd_out_data4(unsigned char val)
+{
      IOCLR0 |= (LCD_DATA);
      IOSET0 |= (val<<4);
 }
 
-void lcd_write_nibbles(unsigned char val){
+void lcd_write_nibbles(unsigned char val)
+{
 
      //higher-order byte
      lcd_en_set();
@@ -34,7 +37,8 @@ void lcd_write_nibbles(unsigned char val){
      lcd_wait();
 }
 
-void lcd_write_control(unsigned char val){
+void lcd_write_control(unsigned char val)
+{
      lcd_rs_clr();
      lcd_write_nibbles(val);
 }
@@ -44,11 +48,10 @@ void lcd_write_control(unsigned char val){
 
 void lcd_gotoxy(unsigned char x, unsigned char y)
 {
-    if (y==0) 
-        lcd_write_control((1<<LCD_DDRAM)+LCD_START_LINE1+x);
+    if (y==0)
+      lcd_write_control((1<<LCD_DDRAM)+LCD_START_LINE1+x);
     else
-        lcd_write_control((1<<LCD_DDRAM)+LCD_START_LINE2+x);
-
+      lcd_write_control((1<<LCD_DDRAM)+LCD_START_LINE2+x);
 }
 
 void lcd_init(){

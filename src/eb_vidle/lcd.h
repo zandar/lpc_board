@@ -13,7 +13,7 @@
 #define LCD_START_LINE1  0x00		/* DDRAM address of first char of line 1 */
 #define LCD_START_LINE2  0x40		/* DDRAM address of first char of line 2 */
 #define LCD_DDRAM  	7		/* DB7: set DD RAM address */
-#define LCD_WAIT	1		/* Time delay betwen signals ms */
+#define LCD_WAIT	1500		/* Time delay betwen signals in microseconds us */
 
 /* DEFINE IOMASK */
 #define  LCD_D4  0x10	//P0.04
@@ -68,9 +68,9 @@ void lcd_init();
 
 
 /* put a character out to lcd */
-void lcd_putchar(unsigned char);
+void lcd_putchar(char);
 /* print a string */
-void lcd_print(unsigned char*);
+void lcd_print(char*);
 
 
 

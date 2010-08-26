@@ -37,6 +37,7 @@
 #include <stdbool.h>
 #include "def.h"
 #include "lcd.h"
+#include "fsm.h"
 #include <adc.h>
 
 
@@ -44,15 +45,19 @@
 
 #define TIMER_IRQ_PRIORITY	5
 
-#define SAMPLES		500
+#define ADC_SAMPLES	500
 #define ADC_PERIOD	10 // ms
 
 #define START_PIN	15		// start pin
 
-unsigned int counter;
-unsigned int data[SAMPLES];
+//unsigned int counter;
+//unsigned int data[SAMPLES];
 
-bool start_measuring = false;
+//bool start_measuring = false;
+
+struct fsm fsm_scope;
+
+void fsm_scope_init(struct fsm *fsm, enum event event);
 
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -98,7 +103,6 @@ void timer0_irq() {
 	VICVectAddr = 0;
 }
 
-
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 void init_periphery(void){
 
@@ -108,22 +112,18 @@ void init_periphery(void){
 
 	init_uart();
 	init_adc(ADC_ISR);
+	lcd_init();
 } 
-
-
-//void fsm_vidle_init(struct fsm *fsm, enum event event);
 
 void start_button(void)
 {
 	if((IO0PIN & (1<<START_PIN)) == 0)
 	{
-		start_measuring = true;
-		lcd_gotoxy(0,1);
-		lcd_print("Measurement    ");
+		fsm_scope.adc_start = true;
 	}
 }
 
-void blink_led()
+void blink_status_led()
 {
 	static uint32_t led_time = 0;
 	
@@ -134,92 +134,30 @@ void blink_led()
 	}
 }
 
-void rotate_cursor()
-{
-	static uint32_t time = 0;
-	
-	static unsigned char cnt = 0;
-	
-	unsigned char cursor[4] = {'|','/','-','\\'};
-	
-	if(timer_msec >= time + 200)	
-	{
-		time = timer_msec;
-		lcd_gotoxy(15,1);
-		lcd_putchar(cursor[cnt++]);
-		if(cnt == 3) cnt = 0;
-	}
-}
-
-void save_adc()
-{
-	static uint32_t adc_time = 0;
-	
-	rotate_cursor();
-	
-	if(timer_msec >= adc_time + ADC_PERIOD)	
-	{
-		adc_time = timer_msec;
-		data[counter] = adc_val[0];
-		counter++;
-		deb_led_change(LEDY);
-	}
-}
-
-void send_message()
-{
-	unsigned int i = 0;
-	deb_led_on(LEDB);
-	
-	lcd_gotoxy(0,1);
-	lcd_print("Data transfer  ");
-	
-	while(i < SAMPLES)
-	{
-		blink_led();
-		rotate_cursor();
-		send_rs_int(i);
-		send_rs_str(" ");
-		send_rs_int(data[i]);
-		send_rs_str("\n");
-		i++;
-	}
-	deb_led_off(LEDB);
-	lcd_gotoxy(0,1);
-	lcd_print("Ready           ");
-}
-
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 int main(void)
 {
-	counter = 0;
+	uint32_t main_time = timer_usec;
+	
+	//counter = 0;
 	
 	init_periphery();
 	
 	SET_PIN(PINSEL0, START_PIN, PINSEL_0);		// inicializace start pinu
 	IO0DIR &= ~(1<<START_PIN);
 	
-	lcd_init();
-	lcd_print("ADC scope");
-	lcd_gotoxy(0,1);
-	lcd_print("Ready");
+	init_fsm(&fsm_scope, &fsm_scope_init);
 	
 	while(1){
-		if(start_measuring)
+		if(timer_usec >= main_time + 100)
 		{
-			if(counter < SAMPLES)
-			{
-				save_adc();
-			} else {
-				counter = 0;
-				start_measuring = false;
-				send_message();
-			}
+			main_time = timer_usec;
+			run_fsm(&fsm_scope);
 		}
 		start_button();
-		blink_led();
+		blink_status_led();
 	}
 }
 

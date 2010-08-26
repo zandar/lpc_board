@@ -9,9 +9,9 @@ void lcd_wait()
       
       static uint32_t wait_time = 0;
       
-      wait_time = timer_msec;
+      wait_time = timer_usec;
       
-      while(timer_msec <= wait_time + LCD_WAIT);
+      while(timer_usec <= wait_time + LCD_WAIT);
 }
 
 void lcd_out_data4(unsigned char val)
@@ -106,13 +106,13 @@ void lcd_init(){
 
 }
 
-void lcd_putchar(unsigned char c){
+void lcd_putchar(char c){
 
        lcd_rs_set();
        lcd_write_nibbles(c);
 }
 
-void lcd_print(unsigned char* str){
+void lcd_print(char* str){
       int i;
 
       //limit 1 line display for prints

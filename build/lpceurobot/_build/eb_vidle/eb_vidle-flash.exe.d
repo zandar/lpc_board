@@ -3,6 +3,8 @@
   /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/crt0.o  \
   /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/initarray.o  \
   /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/hwinit.o  \
+  fsm.o  \
+  fsm_vidle.o  \
   lcd.o  \
   main.o  \
   uar.o  \
