@@ -1,0 +1,8 @@
+# -*- makefile -*-
+
+bin_PROGRAMS = lpc_scope
+
+lpc_scope_SOURCES = main.c uar.c lcd.c fsm.c fsm_scope.c
+lpc_scope_LIBS = can ebb
+
+link_VARIANTS = flash

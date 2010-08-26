@@ -1,9 +1,13 @@
-/media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/bin/eb_ebb-flash: \
+/media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/bin/lpc_scope-flash: \
   /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/lpc21xx.ld-flash \
   /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/crt0.o  \
   /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/initarray.o  \
   /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/hwinit.o  \
+  fsm.o  \
+  fsm_scope.o  \
+  lcd.o  \
   main.o  \
+  uar.o  \
   /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libeurobothw.a  \
   /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libcan.a  \
   /media/DATA/programovani/C_mikrokontroler/lpc_board/build/lpceurobot/_compiled/lib/libebb.a  \
